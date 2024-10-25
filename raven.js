@@ -717,7 +717,7 @@ reply(resultt4.stderr)
     });
 break;
 case "eval":{
-   if (Doneer) throw NotOwner; 
+   if (!Owner) throw NotOwner; 
 if (!text) throw 'Provide a valid Bot Baileys Function to evaluate'
    try { 
  let evaled = await eval(budy.slice(2)); 
@@ -1898,7 +1898,7 @@ case "movie":
  break;
  
       case "nick": case "owner": 
- client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/RNCiPJR.mp4' }, caption: `Here is My Owner contact🔥 https://wa.me/message/YNDA2RFTE35LB1` }, {quoted: m}); 
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/RNCiPJR.mp4' }, caption: `𝗛𝗲𝗿𝗲 𝗶𝘀 𝗠𝘆 𝗢𝘄𝗻𝗲𝗿 𝗖𝗼𝗻𝘁𝗮𝗰𝘁🔥 https://wa.me/message/YNDA2RFTE35LB1 𝗢𝗻𝗹𝘆 𝗗𝗺 𝘄𝗶𝘁𝗵 𝗮 𝗿𝗲𝗮𝘀𝗼𝗻😁` }, {quoted: m}); 
   
  break;
        
