@@ -276,7 +276,7 @@ var lod = [
 	"𝗣𝗜𝗡𝗚𝗜𝗡𝗚 ● ● ● "
 	
 ]
-let { key } = await client.sendMessage(from, {text: '༆𝗣𝗢𝗡𝗚'})
+let { key } = await client.sendMessage(from, {text: '𝗣𝗢𝗡𝗚'})
 
 for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
@@ -1345,7 +1345,8 @@ break;
   } 
  break;
           case "leave": { 
-                 if (!Owner) throw `owner only` 
+                 if (!Owner) throw `owner only`
+		 if (!m.isGroup) throw group;
  await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
                  await client.groupLeave(m.chat); 
   
@@ -1731,7 +1732,7 @@ break;
     case "ping": case "speed": {
                  
 	    await loading ()
-	     m.reply (`༆𝗣𝗢𝗡𝗚\n ${dreadedspeed.toFixed(4)} 𝗠𝘀`); 
+	     m.reply (`𝗣𝗢𝗡𝗚\n ${dreadedspeed.toFixed(4)} 𝗠𝘀`); 
          } 
  break; 
   
