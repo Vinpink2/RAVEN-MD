@@ -1344,7 +1344,7 @@ break;
   } 
  break;
           case "leave": { 
-                 if (!owner) throw owner only; 
+                 if (!Owner) throw `owner only` 
  await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
                  await client.groupLeave(m.chat); 
   
@@ -1728,9 +1728,9 @@ m.reply("Download failed\n" + error)
 }
 break;  
     case "ping": case "speed": {
-   await loading ()
-	    
-               m.reply (`*●𝗣𝗼𝗻𝗴\n: ${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
+                 
+	    await loading ()
+	     m.reply (`*●𝗣𝗼𝗻𝗴\n: ${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
          } 
  break; 
   
