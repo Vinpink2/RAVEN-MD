@@ -270,12 +270,13 @@ await client.sendMessage(from, {text: lod[i], edit: key });
 	  
 async function loading () {
 var lod = [
-"●",
-"𒊹︎",	
+"🖤",
+"𒊹︎",
+"❤",	
 	"𝗣𝗜𝗡𝗚𝗜𝗡𝗚 ● ● ● "
 	
 ]
-let { key } = await client.sendMessage(from, {text: '●𝗣𝗼𝗻𝗴'})
+let { key } = await client.sendMessage(from, {text: '༆𝗣𝗢𝗡𝗚'})
 
 for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
@@ -1730,7 +1731,7 @@ break;
     case "ping": case "speed": {
                  
 	    await loading ()
-	     m.reply (`*●𝗣𝗼𝗻𝗴\n: ${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
+	     m.reply (`༆𝗣𝗢𝗡𝗚\n ${dreadedspeed.toFixed(4)} 𝗠𝘀`); 
          } 
  break; 
   
