@@ -248,7 +248,8 @@ for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
 }
 	}
-	   function loading () {
+
+ async function loading () {
 var lod = [
 "🖤",
 "❤",	
