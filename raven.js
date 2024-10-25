@@ -248,6 +248,19 @@ for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
 }
 	}
+	   function loading () {
+var lod = [
+"🖤",
+"❤",	
+	"𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃 ▲ ▼ ▶ "
+	
+]
+let { key } = await client.sendMessage(from, {text: '༆𝐏𝐎𝐍𝐆'})
+
+for (let i = 0; i < lod.length; i++) {
+await client.sendMessage(from, {text: lod[i], edit: key });
+}
+}
     if (gptdm === 'TRUE' && m.chat.endsWith("@s.whatsapp.net")) {
 
   	
@@ -1328,7 +1341,7 @@ break;
   } 
  break;
           case "leave": { 
-                 if (!isAdmin) throw admin; 
+                 if (!owner) throw owner only; 
  await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
                  await client.groupLeave(m.chat); 
   
@@ -1712,7 +1725,8 @@ m.reply("Download failed\n" + error)
 }
 break;  
     case "ping": case "speed": {
-               m.reply (`*𝐑𝐚𝐯𝐞𝐧 𝐬𝐩𝐞𝐞𝐝 𝐢𝐬: ${dreadedspeed.toFixed(4)} _𝐦𝐬_*`); 
+	    await loading ()
+               m.reply (`༆𝐏𝐎𝐍𝐆/n*${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
          } 
  break; 
   
