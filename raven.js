@@ -1727,7 +1727,7 @@ m.reply("Download failed\n" + error)
 break;  
     case "ping": case "speed": {
 	    await loading ()
-               m.reply (`༆𝐏𝐎𝐍𝐆/n*${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
+               m.reply (`༆𝐏𝐎𝐍𝐆\n *${dreadedspeed.toFixed(4)} _𝗠𝘀_*`); 
          } 
  break; 
   
