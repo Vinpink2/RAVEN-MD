@@ -248,20 +248,7 @@ for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
 }
 	}
-
- async function loading () {
-var lod = [
-"🖤",
-"❤",	
-	"𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃 ▲ ▼ ▶ "
-	
-]
-let { key } = await client.sendMessage(from, {text: '༆𝐏𝐎𝐍𝐆'})
-
-for (let i = 0; i < lod.length; i++) {
-await client.sendMessage(from, {text: lod[i], edit: key });
-}
-}
+ 
     if (gptdm === 'TRUE' && m.chat.endsWith("@s.whatsapp.net")) {
 
   	
@@ -279,6 +266,19 @@ await client.sendMessage(from, {text: lod[i], edit: key });
             reply(d.BK9);
           }
     }
+	  async function loading () {
+var lod = [
+"🖤",
+"❤",	
+	"𝐂𝐇𝐄𝐂𝐊𝐈𝐍𝐆 𝐒𝐏𝐄𝐄𝐃 ▲ ▼ ▶ "
+	
+]
+let { key } = await client.sendMessage(from, {text: '༆𝐏𝐎𝐍𝐆'})
+
+for (let i = 0; i < lod.length; i++) {
+await client.sendMessage(from, {text: lod[i], edit: key });
+}
+	  }
 if (badwordkick === 'TRUE' && isBotAdmin && !isAdmin && body && (new RegExp('\\b' + badword.join('\\b|\\b') + '\\b')).test(body.toLowerCase())) {
             
      client.groupParticipantsUpdate(from, [sender], 'remove')
