@@ -1345,7 +1345,7 @@ break;
   } 
  break;
           case "leave": { 
-                 if (!Owner) throw `owner only`
+                 if (!Owner) throw NotOwner;
 		 if (!m.isGroup) throw group;
  await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
                  await client.groupLeave(m.chat); 
