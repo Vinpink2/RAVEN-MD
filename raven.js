@@ -1682,25 +1682,23 @@ mimetype: "video/mp4",
 
 }
 break;
-          
-    case "video": {
+        case 'video': {
 const yts = require("yt-search");
 try {
 
-if (!text) return m.reply("Which video do u want to download ?")
+if (!text) return m.reply("What video do you want to download ?")
 
 let search = await yts(text);
         let link = search.all[0].url;
 
-        
         let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
 await client.sendMessage(m.chat, {
-  video: {url: data.result.mp4},
+  video: {url: data.result.downloadLink},
 mimetype: "video/mp4",
  fileName: `${data.result.title}.mp4`}, { quoted: m });
 
 await client.sendMessage(m.chat, {
- document: {url: data.result.mp4},
+ document: {url: data.result.downloadLink},
 mimetype: "video/mp4",
  fileName: `${search.all[0].title}.mp4` }, { quoted: m });
 
@@ -1712,9 +1710,8 @@ m.reply("Download failed\n" + error)
 }
 
 }
-break;
-
-case "ping": case "speed": {
+break;  
+    case "ping": case "speed": {
                m.reply (`*𝐑𝐚𝐯𝐞𝐧 𝐬𝐩𝐞𝐞𝐝 𝐢𝐬: ${dreadedspeed.toFixed(4)} _𝐦𝐬_*`); 
          } 
  break; 
