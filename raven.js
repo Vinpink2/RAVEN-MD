@@ -101,10 +101,10 @@ const groupName = m.isGroup && groupMetadata ? await groupMetadata.subject : "";
      const groupAdmin = m.isGroup ? await getGroupAdmins(participants) : ""; 
      const isBotAdmin = m.isGroup ? groupAdmin.includes(botNumber) : false; 
      const isAdmin = m.isGroup ? groupAdmin.includes(m.sender) : false;
-const admin = process.env.ADMIN_MSG || 'Are you an admin?';
-    const group = process.env.GROUP_ONLY_MSG || 'Is this a group chat?';
-    const botAdmin = process.env.BOT_ADMIN_MSG || 'Am I an admin?'
-    const NotOwner = process.env.NOT_OWNER_MSG || 'Are you the owner?';
+const admin = process.env.ADMIN_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗿𝗲𝘀𝗲𝗿𝘃𝗲𝗱 𝗳𝗼𝗿 𝗔𝗱𝗺𝗶𝗻𝘀!';
+    const group = process.env.GROUP_ONLY_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗺𝗮𝗱𝗲 𝗳𝗼𝗿 𝗚𝗿𝗼𝘂𝗽𝘀!';
+    const botAdmin = process.env.BOT_ADMIN_MSG || '𝗜 𝗻𝗲𝗲𝗱 𝗔𝗱𝗺𝗶𝗻 𝗽𝗿𝗲𝘃𝗶𝗹𝗲𝗱𝗴𝗲𝘀!'
+    const NotOwner = process.env.NOT_OWNER_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗺𝗮𝗱𝗲 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗼𝘄𝗻𝗲𝗿!';
 const wapresence = process.env.WA_PRESENCE || 'recording';
 const antilink = process.env.ANTILINK || 'TRUE';
 const antilinkall = process.env.ANTILINK_ALL || 'TRUE';
@@ -1087,9 +1087,23 @@ break;
  m.reply('Promoted To Admin<🥇'); 
           }
           break;
+		      case "getvar": 
+ if (!Owner) throw NotOwner;  
+     const heroku = new Heroku({  
+         token: herokuapi, // Replace 'heroku' with your actual Heroku token 
+     });  
+     let baseUR = "/apps/" + appname;  
+     let h9 = await heroku.get(baseUR + '/config-vars');  
+     let stoy = '*𝗕𝗲𝗹𝗼𝘄 𝗔𝗿𝗲 𝗛𝗲𝗿𝗼𝗸𝘂 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲𝘀 𝗙𝗼𝗿 𝗥𝗔𝗩𝗘𝗡-𝗠𝗗:*\n\n';  
+     for ( vrt in h9) { // Added 'const' to declare 'vr' 
+         stoy += vrt + '=' + h9[vrt] + '\n\n'; // Fixed variable name 'str' to 'sto' 
+     }  
+     reply(stoy); 
+  
+     break;
 
 case 'restart':  
-  if (!Owner) throw `Owner Only` 
+  if (!Owner) throw NotOwner; 
   reply(`Restarting. . .`)  
   await sleep(3000)  
   process.exit()  
