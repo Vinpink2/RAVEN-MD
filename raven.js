@@ -500,6 +500,8 @@ reply(advice());
 console.log(advice());
 
 break;
+		      case "ai":
+lib[ai.js](client, m, text, qmsg, mime, UploadFileUgu, TelegraPh);
 	            
 case "compile-py":
 
