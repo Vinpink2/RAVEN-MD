@@ -1692,7 +1692,7 @@ if (!text) return m.reply("Provide a valid YouTube link!")
 async function downloadMp4 (link) {
 try {
 
-let data = await fetchJson (`https://widipe.com/download/ytdl?url=${link}`)
+let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
 
 await client.sendMessage(m.chat, {
  audio: {url: data.result.mp4},
