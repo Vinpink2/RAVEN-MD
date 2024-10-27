@@ -27,10 +27,7 @@
 
 <p align="center">
 
-<a href="https://api.whatsapp.com/send?phone=254114660061&text=Hello+N꙰i꙰c꙰k꙰༆"><img src="https://img.shields.io/badge/Contact N꙰i꙰c꙰k꙰༆-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-
-
-***Made on Earth by 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫🦄***
+<a href="https://api.whatsapp.com/send?phone=254114660061&text=Hello+N꙰i꙰c꙰k꙰༆"><img src="https://img.shields.io/badge/Contact 𝗡𝗜𝗖𝗞༆-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 
 ***This bot is created with the help of NodeJS and uses [Baileys](https://github.com/adiwajshing/Baileys)***
