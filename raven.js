@@ -1111,7 +1111,7 @@ case 'restart':
   process.exit()  
   break;
 	      case 'remove': case 'kick':{
-		if (!m.isGroup) throw group;
+	 try{        if (!m.isGroup) throw group;
 		if (!isBotAdmin) throw botAdmin;
 		if (!isAdmin) throw admin;
 if (!m.quoted && (!m.mentionedJid || m.mentionedJid.length === 0)) {
