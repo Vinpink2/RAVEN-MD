@@ -23,6 +23,12 @@
 
 </p>
 
+## ```CONTACT ME```
+
+<p align="center">
+
+<a href="https://api.whatsapp.com/send?phone=254114660061&text=Hello+N꙰i꙰c꙰k꙰༆"><img src="https://img.shields.io/badge/Contact N꙰i꙰c꙰k꙰༆-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+
 
 ***Made on Earth by 𝐍𝐢𝐜𝐤_𝐇𝐮𝐧𝐭𝐞𝐫🦄***
 
@@ -30,9 +36,9 @@
 ***This bot is created with the help of NodeJS and uses [Baileys](https://github.com/adiwajshing/Baileys)***
 
 ## FEATURES
-This is a highly customisable simple whatsapp bot with group management features and few media commands and chatgpt courtesy of openai APIs.
+This is a highly customisable simple whatsapp bot with group management features and few media commands and chatgpt courtesy of Gemini.
 
-You will need an openai API key for AI features to work.
+Our AI features use random APIs to run, so sometimes they may be down.
 
 # SET-UP
 
