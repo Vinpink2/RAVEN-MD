@@ -74,7 +74,7 @@ Modifying the bot structure is at your own risk. We won't offer technical suppor
 
 ## License
 
-[MIT License](https://https://github.com/HunterNick2/RAVEN-MD/blob/main/LICENSE)
+[MIT License](https://github.com/Fortunatusmokaya/DREADED-GPT-AI/blob/main/LICENSE)
 
 Copyright (c) 2024 RAVEN-MD
 
