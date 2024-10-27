@@ -1116,7 +1116,7 @@ try {
                  if (!m.isGroup) throw group; 
   if (!isBotAdmin) throw botAdmin; 
   if (!isAdmin) throw admin;
-	if (!quoted) throw `U didn't tag a user`
+  if (!m.quoted) throw `U didn't tag a user`
   
   
   
@@ -1127,7 +1127,7 @@ try {
                  await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
 await m.reply('Successfully removed!'); 
 } 
-  
+    }
   break;
 
 
