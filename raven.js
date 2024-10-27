@@ -1755,10 +1755,29 @@ break;
          } 
  break; 
   
- case "runtime": case "uptime": { 
+  case "uptime": { 
                  m.reply (`${runtime(process.uptime())}`) 
  } 
  break;
+		      case 'runtime':
+		let raven = `𝗥𝗮𝘃𝗲𝗻 𝗕𝗼𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗿𝘂𝗻𝗻𝗶𝗻𝗴 𝘀𝗶𝗻𝗰𝗲 ${runtime(process.uptime())}`
+                client.sendMessage(m.chat, {
+                    text: raven,
+                    contextInfo: {
+                        externalAdReply: {
+                            showAdAttribution: true,
+                            title: '𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧',
+                            body: 'https://chat.whatsapp.com/DefN96lXQ4i5iO1wDDeu2C',
+                            thumbnailUrl: 'https://i.imgur.com/YpHG3eT.jpeg',
+                            sourceUrl: 'https://chat.whatsapp.com/DefN96lXQ4i5iO1wDDeu2C',
+                            mediaType: 1,
+                            renderLargerThumbnail: true
+                        }
+                    }
+                }, {
+                    quoted: m
+                })
+                break;
 
 case "alive": { 
   
