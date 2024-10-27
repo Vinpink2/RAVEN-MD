@@ -1,4 +1,4 @@
-# 𝐑𝐀𝐕𝐄𝐍-𝐌𝐃
+# 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧
 <div align="center">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=THIS  IS+🦄RAVEN-MD🦄;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+NICK;PUBLIC+RELEASED; ...;TEAM RAVEN-𝙼𝙳." alt="Typing SVG" /></a>
   </p>
@@ -19,9 +19,6 @@
 <a href="https://github.com/HunterNick2/RAVEN-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/HunterNick2/RAVEN-MD?label=Watching&style=social"></a>
 </p>
  
-<h1 align="center">𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧</h1>
-
-</p>
 
 ## ```CONTACT ME```
 
