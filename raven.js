@@ -1118,16 +1118,18 @@ try {
   if (!isAdmin) throw admin;
   if (!m.quoted) throw `U didn't tag a user`
   
-  
-  
-                 let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'];
+	let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'];
  if (!users) throw NotOwner; 
  if (users  == client.decodeJid(client.user.id)) throw 'Bot cannot remove itself 😡';
  if (users == Owner) { m.reply('Its owner number')}; 
                  await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
 await m.reply('Successfully removed!'); 
-} 
-    }
+}catch (errr) { 
+ await reply("Something is fatally Wrong, i don't know!")}
+
+     
+}
+    
   break;
 
 
