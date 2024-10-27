@@ -68,7 +68,6 @@ Linking/Pairing:
 
 
 
-Incase of any issues, contact me  [here](https://wa.me/+254114660061) via WhatsApp or [here](dicksonnicky50@gmail.com) via Email.
 
 Modifying the bot structure is at your own risk. We won't offer technical support in case of errors resulting!
 
