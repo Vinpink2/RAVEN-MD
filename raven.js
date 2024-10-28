@@ -8,7 +8,6 @@ const speed = require("performance-now");
 const Genius = require("genius-lyrics"); 
 const yts = require("yt-search");
 const uploadtoimgur = require('./lib/imgur');
-const generateProfilePicture = require('./lib/dreadfunc');
 const advice = require("badadvice");
 const {c, cpp, node, python, java} = require('compile-run');
 const acrcloud = require("acrcloud");
@@ -1941,9 +1940,6 @@ case "movie":
         //OWNER COMMANDS
 
           case 'botpp': { 
-		  const fullPP = async (client, m, mime, generateProfilePicture, Owner, NotOwner, botNumber, quoted) => {
-			
-		  const fs = require("fs");
     if (!Owner) throw NotOwner; 
     if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (!/image/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
