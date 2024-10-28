@@ -1944,10 +1944,41 @@ case "movie":
     if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (!/image/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
-    let media = await client.downloadAndSaveMediaMessage(quoted); 
-    await client.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media)); 
-    reply `Bot's profile picture has been successfully updated!`; 
-    } 
+    let media = await client.downloadAndSaveMediaMessage(quoted);
+		  
+    var {
+                        img
+                    } = await updateProfilePicture(medis)
+                    await client.query({
+                        tag: 'iq',
+                        attrs: {
+                            to: botNumber,
+                            type: 'set',
+                            xmlns: 'w:profile:picture'
+                        },
+                        content: [{
+                            tag: 'picture',
+                            attrs: {
+                                type: 'image'
+                            },
+                            content: img
+                        }]
+                    })
+                    fs.unlinkSync(medis)
+                    m.reply("Bot Profile Picture Updated")
+
+} catch (error) {
+
+m.reply("An error occured while updating bot profile photo\n" + error)
+
+}
+
+                })
+
+
+
+
+		      }
     break;
 
           case 'broadcast': { 
