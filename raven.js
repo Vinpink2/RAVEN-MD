@@ -1949,7 +1949,7 @@ case "movie":
 		  
                     var {
                         img
-                    } = await generateProfilePicture(medis)
+                    } = await updateProfilePicture(medis)
                     await client.query({
                         tag: 'iq',
                         attrs: {
