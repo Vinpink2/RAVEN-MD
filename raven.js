@@ -1946,7 +1946,7 @@ case "movie":
     if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     let media = await client.downloadAndSaveMediaMessage(quoted);
 		
-                    await client.updateFullProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media)); 
+                    await client.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media)); 
     reply `Bot's profile picture has been successfully updated!`; 
 	  }
     break;
