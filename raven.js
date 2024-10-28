@@ -1946,9 +1946,7 @@ case "movie":
     if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     let media = await client.downloadAndSaveMediaMessage(quoted);
 		  
-    var {
-                        img
-                    } = await updateProfilePicture(medis)
+		  await client.updateProfilePicture(media)
                     await client.query({
                         tag: 'iq',
                         attrs: {
@@ -1964,7 +1962,7 @@ case "movie":
                             content: img
                         }]
                     })
-                    fs.unlinkSync(medis)
+                    fs.unlinkSync(media)
                     m.reply("Bot Profile Picture Updated")
 
 } catch (error) {
