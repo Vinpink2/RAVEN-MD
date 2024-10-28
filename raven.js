@@ -1941,13 +1941,15 @@ case "movie":
         //OWNER COMMANDS
 
           case 'botpp': { 
+		  const fullPP = async (client, m, mime, generateProfilePicture, Owner, NotOwner, botNumber, quoted) => {
+			
 		  const fs = require("fs");
     if (!Owner) throw NotOwner; 
     if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (!/image/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     let medis = await client.downloadAndSaveMediaMessage(quoted);
-		  
+		
                     var {
                         img
                     } = await generateProfilePicture(medis)
