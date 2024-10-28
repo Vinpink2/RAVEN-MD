@@ -1563,7 +1563,7 @@ return reply("Failed to download the MP3. Please try again Later.");
 await client.sendMessage(m.chat, {
 audio: mp3Buffer,
 fileName: anup3k.title + '.mp3',
-mimetype: 'audio/mp4',
+mimetype: 'audio/mp3',
 ptt: true,
 contextInfo: {
 externalAdReply: {
@@ -1695,7 +1695,7 @@ try {
 let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
 
 await client.sendMessage(m.chat, {
- audio: {url: data.result.mp4},
+ video: {url: data.result.mp4},
 mimetype: "video/mp4",
  fileName: `${data.result.title}.mp4`
  
