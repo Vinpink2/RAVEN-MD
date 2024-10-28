@@ -1535,7 +1535,7 @@ break;
  
          case 'song': {
 if (!text) return reply(`Where is your song name? Example : ${prefix + command} Alan walker faded`);
-const yts = require("youtube-yts");
+const yts = require("yt-search");
 let search = await yts(text);
 let anup3k = search.videos[0];
 if (!anup3k) return reply("Song not found,,try another .....!");
@@ -1563,7 +1563,7 @@ return reply("Failed to download the MP3. Please try again Later.");
 await client.sendMessage(m.chat, {
 audio: mp3Buffer,
 fileName: anup3k.title + '.mp3',
-mimetype: 'audio/mp3',
+mimetype: 'audio/mp4',
 ptt: true,
 contextInfo: {
 externalAdReply: {
@@ -1676,6 +1676,7 @@ break;
   
 case 'ytmp4':
 case "ytv": {
+	const yts = require("yt-search");
 if (!text) return m.reply("Provide a valid YouTube link!")
 
 	let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
