@@ -1940,16 +1940,35 @@ case "movie":
         //OWNER COMMANDS
 
           case 'botpp': { 
+		  const fs = require("fs");
     if (!Owner) throw NotOwner; 
     if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (!/image/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
     if (/webp/.test(mime)) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
-    let media = await client.downloadAndSaveMediaMessage(quoted);
+    let medis = await client.downloadAndSaveMediaMessage(quoted);
 		  
-		  await client.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media)); 
-    reply `Bot's profile picture has been successfully updated!`; 
+                    var {
+                        img
+                    } = await generateProfilePicture(medis)
+                    await client.query({
+                        tag: 'iq',
+                        attrs: {
+                            to: botNumber,
+                            type: 'set',
+                            xmlns: 'w:profile:picture'
+                        },
+                        content: [{
+                            tag: 'picture',
+                            attrs: {
+                                type: 'image'
+                            },
+                            content: img
+                        }]
+                    })
+                    fs.unlinkSync(medis)
+                    m.reply("Bot Profile Picture Updated")
 	  }
-    break;
+	  break;
 
           case 'broadcast': { 
          if (!Owner) { 
