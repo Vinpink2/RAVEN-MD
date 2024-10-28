@@ -318,7 +318,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
                    participant: ki
                 } 
              }).then(() => client.groupParticipantsUpdate(m.chat, [ki], 'remove')); 
- client.sendMessage(m.chat, {text:`Hey Bastard, Am sorry bt Next time follow group rules, You out:\n\n@${ki.split("@")[0]}, sending links is prohibited in this group!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
+ client.sendMessage(m.chat, {text:`Hey Bastard, I'm sorry but Next time follow group rules, You out:\n\n@${ki.split("@")[0]}, sending links is prohibited in this group!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
        }   
   
   
