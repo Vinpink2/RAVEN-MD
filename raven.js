@@ -1209,7 +1209,7 @@ try {
 const response = await fetch(`https://widipe.com//download/tikdl?url=${text}`);
 const data = await response.json();
 
-const tikvid = data.data.no_wm;
+const tikvid = data.data.tiktok-dl;
 await client.sendMessage(m.chat,{video : {url : tikvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
 
 } catch (e) {
