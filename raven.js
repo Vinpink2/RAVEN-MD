@@ -1206,10 +1206,10 @@ if (!text.includes('tiktok.com')) return m.reply("That is not a tiktok link.");
 
 try {
 
-const response = await fetch(`https://api.prabath-md.tech/api/tiktokdl?url=${text}`);
+const response = await fetch(`https://widipe.com//download/tikdl?url=${text}`);
 const data = await response.json();
 
-
+6
 const tikvid = data.data.no_wm;
 
 await client.sendMessage(m.chat,{video : {url : tikvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
