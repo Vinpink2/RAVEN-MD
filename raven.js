@@ -88,7 +88,7 @@ const dev = process.env.DEV || '254114660061';
 
 const menu = process.env.MENU_TYPE || 'VIDEO';
  const DevDreaded = dev.split(",");
-    const badwordkick = process.env.BAD_WORD_KICK || 'FALSE';
+    const badwordkick = process.env.BAD_WORD_KICK || 'TRUE';
    const bad = process.env.BAD_WORD || 'fuck';
     const autoread = process.env.AUTOREAD || 'FALSE';
     const badword = bad.split(",");
@@ -344,14 +344,15 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
         case "menu":
 		      await audiovn ()
 		      
-let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
+let cap = `╭═══𒋨〘 𝐑𝐀𝐕𝐄𝐍 𝐀𝐈 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
-┃✬│ 𝐎𝐰𝐧𝐞𝐫 : 𝗡𝗶𝗰𝗸⚚
+┃✬│ 𝐎𝐰𝐧𝐞𝐫 : 𝗡𝗶𝗰𝗸°•°
 ┃✬│ 𝐔𝐬𝐞𝐫 : ${m.pushName}
-┃✬│ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦 : 𝗛𝗲𝗿𝗼𝗸𝘂
+┃✬│ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦 : 𝐇𝐞𝐫𝐨𝐤𝐮
 ┃✬│ 𝐒𝐩𝐞𝐞𝐝 : ${dreadedspeed.toFixed(4)} 𝐦𝐬
-┃✬│ 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐑𝐀𝐌 : 32𝗚𝗕 𝗼𝗳 64𝗚𝗕
+┃✬│ 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐑𝐀𝐌 : 96𝐆𝐁 𝐨𝐟 512𝐆𝐁
 ┃✬│ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
+┃✬│ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: 𝗩7.𝟎.2
 ┃✬│●───●───●───●─●╮
 ┃✬│  ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓 ▋▋
 ┃✬│●───●───●───●─●╯
@@ -379,7 +380,6 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗣𝗵𝗼𝘁𝗼
 ┃✬│ 𝗥𝗲𝘁𝗿𝗶𝗲𝘃𝗲
 ┃✬│ 𝗩𝘃
-┃✬│ 𝗦𝗰𝗿𝗲𝗲𝗻𝘀𝗵𝗼𝘁
 ┃✬│ 𝗠𝗶𝘅
 ┃✬│ 𝗧𝗮𝗸𝗲
 ┃✬│ 𝗤𝘂𝗼𝘁𝗲𝗹𝘆
@@ -387,7 +387,6 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ●═════ 〘 𝗚𝗣𝗧 〙═────═●
 ╭══───────◇───────══╮
 ┃✬│ 𝗥𝗮𝘃𝗲𝗻
-┃✬│ 𝗔𝗶
 ┃✬│ 𝗚𝗲𝗺𝗶𝗻𝗶
 ┃✬│ 𝗚𝗽𝘁
 ┃✬│ 𝗚𝗽𝘁2                                                                                                                                                                                                                                                        
@@ -539,25 +538,6 @@ reply('An error occured while communicating with the APIs\n' + e);
 }
 }
 break;
-	      case "screenshot": case "ss": {
-		      try {
-let cap = `𝗦𝗰𝗿𝗲𝗲𝗻𝘀𝗵𝗼𝘁 𝗯𝘆 ${botname}`
-
-if (!text) return m.reply("Provide a website link to screenshot.")
-
-const image = `https://image.thum.io/get/fullpage/${text}`
-
-await client.sendMessage(m.chat, { image: { url: image }, caption: cap}, {quoted: m });
-
-
-} catch (error) {
-
-m.reply("An error occured.")
-
-}
-
-	      }
-	      break;
 
    case "gpt2": {
 const { G4F } = require("g4f"); 
@@ -1206,10 +1186,12 @@ if (!text.includes('tiktok.com')) return m.reply("That is not a tiktok link.");
 
 try {
 
-const response = await fetch(`https://widipe.com//download/tiktokdl?url=${text}`);
+const response = await fetch(`https://api.prabath-md.tech/api/tiktokdl?url=${text}`);
 const data = await response.json();
 
-const tikvid = data.data.wm;
+
+const tikvid = data.data.no_wm;
+
 await client.sendMessage(m.chat,{video : {url : tikvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
 
 } catch (e) {
@@ -1799,7 +1781,7 @@ break;
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋 ${m.pushname}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, {quoted:m});  
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
   case "apk":
