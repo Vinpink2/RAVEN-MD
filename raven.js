@@ -1799,7 +1799,7 @@ break;
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋@${kid.split("@")[0]}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, contextInfo:{mentionedJid:[kid]}}, {quoted:m});  
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋 @${kid.split("@")[0]}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, {quoted:m});  
  }
 break;
   case "apk":
