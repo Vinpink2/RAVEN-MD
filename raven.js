@@ -88,7 +88,7 @@ const dev = process.env.DEV || '254114660061';
 
 const menu = process.env.MENU_TYPE || 'VIDEO';
  const DevDreaded = dev.split(",");
-    const badwordkick = process.env.BAD_WORD_KICK || 'TRUE';
+    const badwordkick = process.env.BAD_WORD_KICK || 'FALSE';
    const bad = process.env.BAD_WORD || 'fuck';
     const autoread = process.env.AUTOREAD || 'FALSE';
     const badword = bad.split(",");
@@ -1799,7 +1799,7 @@ break;
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `Hey @ ${m.pushName}, 𝐑𝐀𝐕𝐄𝐍 Has been alive since  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋@${kid.split("@")[0]}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, contextInfo:{mentionedJid:[kid]}}, {quoted:m});  
  }
 break;
   case "apk":
