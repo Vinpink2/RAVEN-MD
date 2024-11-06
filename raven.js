@@ -346,7 +346,6 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 		      
 let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
-┃✬│ 𝐎𝐰𝐧𝐞𝐫 : 𝗡𝗶𝗰𝗸⚚
 ┃✬│ 𝐔𝐬𝐞𝐫 : ${m.pushName}
 ┃✬│ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦 : 𝗛𝗲𝗿𝗼𝗸𝘂
 ┃✬│ 𝐒𝐩𝐞𝐞𝐝 : ${dreadedspeed.toFixed(4)} 𝐦𝐬
@@ -501,8 +500,56 @@ reply(advice());
 console.log(advice());
 
 break;
-		      case "ai":
-lib[ai.js](client, m, text, qmsg, mime, UploadFileUgu, TelegraPh);
+		      case "ai": {
+			      const {
+    GoogleGenerativeAI: _0x817910
+  } = require("@google/generative-ai");
+  const _0xc0423b = require("axios");
+		      
+  try {
+    if (!m.quoted) {
+      return m.reply("Quote an image with the instruction eh!");
+    }
+    if (!text) {
+      return m.reply("Provide some instruction eh! This is RAVEN AI, using gemini-pro-vision to analyse images.");
+    }
+    if (!/image/.test(mime)) {
+      return m.reply("Huh this is not an image!");
+    }
+    let _0x3439a2 = await client.downloadAndSaveMediaMessage(m.quoted);
+    let _0x3dfb7c = await uploadtoimgur(_0x3439a2);
+    m.reply("A moment, lemme analyse the contents of the image...");
+    const _0x4e9e6a = new _0x817910("AIzaSyCcZqDMBa8FcAdBxqE1o6YYvzlygmpBx14");
+    async function _0x309a3c(_0x1400ed, _0x1a081e) {
+      const _0x53e4b2 = {
+        responseType: "arraybuffer"
+      };
+      const _0x1175d9 = await _0xc0423b.get(_0x1400ed, _0x53e4b2);
+      const _0x2a4862 = Buffer.from(_0x1175d9.data).toString("base64");
+      const _0x2f6e31 = {
+        data: _0x2a4862,
+        mimeType: _0x1a081e
+      };
+      const _0x14b65d = {
+        inlineData: _0x2f6e31
+      };
+      return _0x14b65d;
+    }
+    const _0x22a6bb = {
+      model: "gemini-1.5-flash"
+    };
+    const _0x42849d = _0x4e9e6a.getGenerativeModel(_0x22a6bb);
+    const _0x2c743f = [await _0x309a3c(_0x3dfb7c, "image/jpeg")];
+    const _0xcf53e3 = await _0x42849d.generateContent([text, ..._0x2c743f]);
+    const _0x195f9c = await _0xcf53e3.response;
+    const _0x3db5a3 = _0x195f9c.text();
+    await m.reply(_0x3db5a3);
+  } catch (_0x4b3921) {
+    m.reply("I am unable to analyze images at the moment\n" + _0x4b3921);
+  }
+}
+ break;
+
 	            
 case "compile-py":
 
@@ -1220,39 +1267,56 @@ m.reply("An error occured. API might be down" + e)
 
 }
 break;
-	case "play2": {
-    const yts = require("yt-search");
+	case 'play': {
+		      const yts = require("yt-search");
+const ffmpeg = require("fluent-ffmpeg");
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
 
     try {
-        if (!text) return m.reply("which song do you want to download?")
+        if (!text) return m.reply("What song do you want to download?");
 
         let search = await yts(text);
-        console.log(search); // Log the search results
-
-        if (!search || !search.all || !search.all[0] || !search.all[0].url) {
-            m.reply("Wrong search results");
-            return;
-        }
-
         let link = search.all[0].url;
 
-        let data = await fetchJson(`https://widipe.com/download/ytdl?url=${link}`);
+        let data = await fetchJson(`https://api.dreaded.site/api/ytdl/video?url=${link}`);
+        let videoUrl = data.result.downloadLink;
+
+        let outputFileName = `${search.all[0].title}.mp3`;
+        let outputPath = path.join(__dirname, outputFileName);
+
+       
+        const response = await axios({
+            url: videoUrl,
+            method: "GET",
+            responseType: "stream"
+        });
+
         
+        ffmpeg(response.data)
+            .toFormat("mp3")
+            .save(outputPath)
+            .on("end", async () => {
+                await client.sendMessage(
+                    m.chat,
+                    {
+                        document: { url: outputPath },
+                        mimetype: "audio/mp3",
+                        fileName: outputFileName,
+                    },
+                    { quoted: m }
+                );
+                fs.unlinkSync(outputPath);
+            })
+            .on("error", (err) => {
+                m.reply("Download failed\n" + err.message);
+            });
 
-        if (!data || !data.result || !data.result.mp3 || !data.result.title) {
-            m.reply("wrong data.");
-            return;
-        }
-
-        await client.sendMessage(m.chat, {
-            document: { url: data.result.mp3 },
-            mimetype: "audio/mp3",
-            fileName: `${data.result.title}.mp3`
-        }, { quoted: m });
     } catch (error) {
-        m.reply("Download failed\n" + error)
+        m.reply("Download failed\n" + error.message);
     }
-}
+} 
 break;
  case 'sc': case 'script': case 'repo':
 
@@ -1596,7 +1660,7 @@ mediaUrl: anup3k.url,
 }
 break;
  
-       case "play":
+       case "play2":
 		      {
 	if (!text) return reply('Which song do you want to download?');
 	const randomReduction = Math.floor(Math.random() * 5) + 1;
