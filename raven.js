@@ -18,7 +18,7 @@ const { fetchUrl, isUrl, processTime } = require("./lib/dreadfunc");
 const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('./lib/dreadupload');
 const { Configuration, OpenAIApi } = require("openai");
 let setting = process.env.AI; 
-const { smsg, formatp, tanggal, formatDate, getTime,  sleep, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/dreadfunc');
+const { smsg, formatp, tanggal, formatDate, getTime,  sleep, generateProfilePicture, clockString, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/dreadfunc');
 const { exec, spawn, execSync } = require("child_process");
 module.exports = raven = async (client, m, chatUpdate, store) => {
   try {
@@ -441,6 +441,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✯│ 𝗚𝗲𝘁𝘃𝗮𝗿
 ┃✬│ 𝗦𝗲𝘁𝘃𝗮𝗿
 ┃✬│ 𝗕𝗼𝘁𝗽𝗽
+┃✯│ 𝗙𝘂𝗹𝗹𝗽𝗽
 ┃✬│ 𝗕𝗹𝗼𝗰𝗸
 ┃✬│ 𝗨𝗻𝗯𝗼𝗰𝗸
 ┃✬│ 𝗞𝗶𝗹𝗹
@@ -451,6 +452,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ╭══───────◇───────══╮
 ┃✯│ 𝗪𝗲𝗮𝘁𝗵𝗲𝗿
 ┃✯│ 𝗚𝗶𝘁𝗵𝘂𝗯
+┃✯│ 𝗔𝗱𝘃𝗶𝗰𝗲
 ┃✯│ 𝗙𝗮𝗰𝘁
 ┃✯│ 𝗖𝗮𝘁𝗳𝗮𝗰𝘁
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
@@ -461,7 +463,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗨𝗽𝗹𝗼𝗮𝗱
 ┃✬│ 𝗔𝘁𝘁𝗽
 ┃✬│ 𝗨𝗿𝗹
-┃✬│ 𝗔𝗱𝘃𝗶𝗰𝗲
+┃✬│ 𝗜𝗺𝗮𝗴𝗲
 ┃✬│ 𝗦𝘆𝘀𝘁𝗲𝗺
 ┃✬╰═───────◇───────═╯
 ┃✬│   ▍▍𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧  ▍▍
@@ -822,6 +824,64 @@ const rel = await quote(xf, pushname, pppuser)
 
             }
    break;
+		      case "fullpp": {
+		      const { S_WHATSAPP_NET } = require('@whiskeysockets/baileys');
+		      try {
+const fs = require("fs");
+
+if(!Owner) throw NotOwner; 
+if(!msgDreaded) { m.reply('Quote an image...') ; return } ;
+
+
+let media;
+if (msgDreaded.imageMessage) {
+     media = msgDreaded.imageMessage
+
+  } else {
+    m.reply('This is not an image...'); return
+  } ;
+
+var medis = await client.downloadAndSaveMediaMessage(media);
+
+
+
+                    var {
+                        img
+                    } = await generateProfilePicture(medis)
+
+
+
+
+
+
+client.query({
+                tag: 'iq',
+                attrs: {
+                    target: undefined,
+                    to: S_WHATSAPP_NET,
+                    type:'set',
+                    xmlns: 'w:profile:picture'
+                },
+                content: [
+                    {
+                        tag: 'picture',
+                        attrs: { type: 'image' },
+                        content: img
+                    }
+                ]
+            })
+                    
+                    fs.unlinkSync(medis)
+                    m.reply("Bot Profile Picture Updated")
+
+} catch (error) {
+
+m.reply("An error occured while updating bot profile photo\n" + error)
+
+}
+
+                }
+	         break;
 		      
             case "upload": case "url": {
  const fs = require("fs");
