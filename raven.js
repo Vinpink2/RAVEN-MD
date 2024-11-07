@@ -346,13 +346,13 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 		      
 let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
-┃✬│ 𝐔𝐬𝐞𝐫 : ${m.pushName}
-┃✬│ 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦 : 𝗛𝗲𝗿𝗼𝗸𝘂
-┃✬│ 𝐒𝐩𝐞𝐞𝐝 : ${dreadedspeed.toFixed(4)} 𝐦𝐬
-┃✬│ 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐑𝐀𝐌 : 32𝗚𝗕 𝗼𝗳 64𝗚𝗕
-┃✬│ 𝐑𝐮𝐧𝐭𝐢𝐦𝐞 : ${runtime(process.uptime())}
+┃✬│ 𝗨𝘀𝗲𝗿 : ${m.pushName}
+┃✬│ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : 𝗛𝗲𝗿𝗼𝗸𝘂
+┃✬│ 𝗦𝗽𝗲𝗲𝗱 : ${dreadedspeed.toFixed(4)} 𝗠𝘀
+┃✬│ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗥𝗔𝗠 : 32𝗚𝗕 𝗼𝗳 64𝗚𝗕
+┃✬│ 𝗨𝗽𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 ┃✬│●───●───●───●─●╮
-┃✬│  ▋▋𝐑𝐀𝐕𝐄𝐍 𝐁𝐎𝐓 ▋▋
+┃✬│  ▋▋𝗥𝗔𝗩𝗘𝗡 𝗠𝗗 ▋▋
 ┃✬│●───●───●───●─●╯
 ╰══༄༄༄༄༄༄༄༄༄༄༄༄𖤓╯
 ●════〘 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 〙═──═●
@@ -385,8 +385,8 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄𖤓╯
 ●═════ 〘 𝗚𝗣𝗧 〙═────═●
 ╭══───────◇───────══╮
-┃✬│ 𝗥𝗮𝘃𝗲𝗻
 ┃✬│ 𝗔𝗶
+┃✬│ 𝗥𝗮𝘃𝗲𝗻
 ┃✬│ 𝗚𝗲𝗺𝗶𝗻𝗶
 ┃✬│ 𝗚𝗽𝘁
 ┃✬│ 𝗚𝗽𝘁2                                                                                                                                                                                                                                                        
@@ -443,7 +443,15 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗕𝗹𝗼𝗰𝗸
 ┃✬│ 𝗨𝗻𝗯𝗼𝗰𝗸
 ┃✬│ 𝗞𝗶𝗹𝗹
+┃✯│ 𝗦𝗮𝘃𝗲
 ┃✬│ >
+╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
+●═══ 〘 𝗦𝗘𝗔𝗥𝗖𝗛  〙═──═●
+╭══───────◇───────══╮
+┃✯│ 𝗪𝗲𝗮𝘁𝗵𝗲𝗿
+┃✯│ 𝗚𝗶𝘁𝗵𝘂𝗯
+┃✯│ 𝗙𝗮𝗰𝘁
+┃✯│ 𝗖𝗮𝘁𝗳𝗮𝗰𝘁
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ●═══ 〘 𝗢𝗧𝗛𝗘𝗥𝗦  〙═──═●
 ╭══───────◇───────══╮
@@ -571,6 +579,30 @@ reply(resultt.stderr)
     });
 
 break;
+		      case 'save': {
+  const textL = m.text.toLowerCase();
+  const quotedMessage = m.msg?.contextInfo?.quotedMessage;
+
+if (quotedMessage && textL.startsWith(prefix + "save") && !m.quoted.chat.includes("status@broadcast")) {
+    return m.reply("You did not tag a status media to save.");
+  }
+
+if (Owner && quotedMessage && textL.startsWith(prefix + "save") && m.quoted.chat.includes("status@broadcast")) {
+    
+    if (quotedMessage.imageMessage) {
+      let imageCaption = quotedMessage.imageMessage.caption;
+      let imageUrl = await client.downloadAndSaveMediaMessage(quotedMessage.imageMessage);
+      client.sendMessage(m.chat, { image: { url: imageUrl }, caption: imageCaption });
+    }
+
+    if (quotedMessage.videoMessage) {
+      let videoCaption = quotedMessage.videoMessage.caption;
+      let videoUrl = await client.downloadAndSaveMediaMessage(quotedMessage.videoMessage);
+      client.sendMessage(m.chat, { video: { url: videoUrl }, caption: videoCaption });
+    }
+     }
+      }
+    break;
 
        case 'raven':{
 try {
@@ -586,6 +618,43 @@ reply('An error occured while communicating with the APIs\n' + e);
 }
 }
 break;
+		case 'github': {
+ if (!text) return m.reply('Provide a github username to stalk');
+ 
+try {
+const response = await fetch(`https://itzpire.com/stalk/github-user?username=${text}`)
+
+const data = await response.json()
+ 
+    const username = data.data.username;
+    const nickname = data.data.nickname;
+    const bio = data.data.bio;
+    const profilePic = data.data.profile_pic;
+    const url = data.data.url;
+    const type = data.data.type;
+    const isAdmin = data.data.admin;
+    const company = data.data.company;
+    const blog = data.data.blog;
+    const location = data.data.location;
+    const publicRepos = data.data.public_repo;
+    const publicGists = data.data.public_gists;
+    const followers = data.data.followers;
+    const following = data.data.following;
+    const createdAt = data.data.ceated_at;
+    const updatedAt = data.data.updated_at;
+
+    
+const message = `Username:- ${username}\n\nNickname:- ${nickname}\n\nBio:- ${bio}\n\nLink:- ${url}\n\nLocation:- ${location}\n\nFollowers:- ${followers}\n\nFollowing:- ${following}\n\nRepos:- ${publicRepos}\n\nCreated:- ${createdAt}`
+
+await client.sendMessage(m.chat, { image: { url: profilePic}, caption: message}, {quoted: m})
+
+} catch (error) {
+
+m.reply("Unable to fetch data\n" + error)
+
+}
+      }
+       break;      
 	      case "screenshot": case "ss": {
 		      try {
 let cap = `𝗦𝗰𝗿𝗲𝗲𝗻𝘀𝗵𝗼𝘁 𝗯𝘆 ${botname}`
@@ -605,6 +674,37 @@ m.reply("An error occured.")
 
 	      }
 	      break;
+		     case 'fact': {
+	try {
+const data = await fetchJson('https://api.dreaded.site/api/fact');
+
+const fact = data.fact;
+
+await m.reply(fact);
+
+} catch (error) {
+
+m.reply('Something is wrong.')
+
+}
+	      }
+    break;
+	      case 'catfact': {
+	try {
+const data = await fetchJson('https://api.dreaded.site/api/catfact');
+
+const fact = data.fact;
+
+await m.reply(fact);
+
+} catch (error) {
+
+m.reply('Something is wrong.')
+
+}
+
+    }
+	      break; 
 
    case "gpt2": {
 const { G4F } = require("g4f"); 
@@ -636,6 +736,47 @@ console.log(e);
 
 }
 break;
+		      case 'weather': {
+		      try {
+
+if (!text) return m.reply("provide a city/town name");
+
+const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=1ad47ec6172f19dfaf89eb3307f74785`);
+        const data = await response.json();
+
+console.log("Weather data:",data);
+
+
+        const cityName = data.name;
+        const temperature = data.main.temp;
+        const feelsLike = data.main.feels_like;
+        const minTemperature = data.main.temp_min;
+        const maxTemperature = data.main.temp_max;
+        const description = data.weather[0].description;
+        const humidity = data.main.humidity;
+        const windSpeed = data.wind.speed;
+        const rainVolume = data.rain ? data.rain['1h'] : 0;
+        const cloudiness = data.clouds.all;
+        const sunrise = new Date(data.sys.sunrise * 1000);
+        const sunset = new Date(data.sys.sunset * 1000);
+
+
+
+await m.reply(`❄️ Weather in ${cityName}
+
+🌡️ Temperature: ${temperature}°C
+📝 Description: ${description}
+❄️ Humidity: ${humidity}%
+🌀 Wind Speed: ${windSpeed} m/s
+🌧️ Rain Volume (last hour): ${rainVolume} mm
+☁️ Cloudiness: ${cloudiness}%
+🌄 Sunrise: ${sunrise.toLocaleTimeString()}
+🌅 Sunset: ${sunset.toLocaleTimeString()}`);
+
+
+} catch (e) { m.reply("Unable to find that location.") }
+  }
+   break;
 case "compile-js":
 if (!text && !m.quoted) throw 'Quote/tag a Js code to compile.';
 
