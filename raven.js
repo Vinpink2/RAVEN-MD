@@ -448,10 +448,11 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✯│ 𝗦𝗮𝘃𝗲
 ┃✬│ >
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
-●═══ 〘 𝗦𝗘𝗔𝗥𝗖𝗛  〙═──═●
+●═══ 〘 𝗠𝗜𝗦𝗖  〙═──═●
 ╭══───────◇───────══╮
 ┃✯│ 𝗪𝗲𝗮𝘁𝗵𝗲𝗿
 ┃✯│ 𝗚𝗶𝘁𝗵𝘂𝗯
+┃✯│ 𝗚𝗶𝘁𝗰𝗹𝗼𝗻𝗲
 ┃✯│ 𝗔𝗱𝘃𝗶𝗰𝗲
 ┃✯│ 𝗙𝗮𝗰𝘁
 ┃✯│ 𝗖𝗮𝘁𝗳𝗮𝗰𝘁
@@ -606,6 +607,18 @@ if (Owner && quotedMessage && textL.startsWith(prefix + "save") && m.quoted.chat
      }
       }
     break;
+	      case 'gitclone': {
+		      if (!text) return m.reply(`Where is the link?`)
+if (!text.includes('github.com')) return m.reply(`Is that a GitHub repo link ?!`)
+let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
+    let [, user3, repo] = text.match(regex1) || []
+    repo = repo.replace(/.git$/, '')
+    let url = `https://api.github.com/repos/${user3}/${repo}/zipball`
+    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
+    await client.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => m.reply("error"))
+
+		    }
+		      break;
 
        case 'raven':{
 try {
