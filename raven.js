@@ -438,6 +438,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗔𝗱𝗺𝗶𝗻
 ┃✬│ 𝗕𝗿𝗼𝗮𝗱𝗰𝗮𝘀𝘁
 ┃✬│ 𝗝𝗼𝗶𝗻
+┃✯│ 𝗚𝗲𝘁𝘃𝗮𝗿
 ┃✬│ 𝗦𝗲𝘁𝘃𝗮𝗿
 ┃✬│ 𝗕𝗼𝘁𝗽𝗽
 ┃✬│ 𝗕𝗹𝗼𝗰𝗸
@@ -516,17 +517,17 @@ break;
 		      
   try {
     if (!m.quoted) {
-      return m.reply("Quote an image with the instruction eh!");
+      return m.reply("𝗤𝘂𝗼𝘁𝗲 𝗮𝗻 𝗶𝗺𝗮𝗴𝗲 𝘄𝗶𝘁𝗵 𝘁𝗵𝗲 𝗶𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀 𝗲𝗵!");
     }
     if (!text) {
-      return m.reply("Provide some instruction eh! This is RAVEN AI, using gemini-pro-vision to analyse images.");
+      return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝘀𝗼𝗺𝗲 𝗶𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀 𝗲𝗵! 𝗧𝗵𝗶𝘀 𝗶𝘀 𝗥𝗔𝗩𝗘𝗡 𝗔𝗶, 𝘂𝘀𝗶𝗻𝗴 𝗴𝗲𝗺𝗶𝗻𝗶-𝗽𝗿𝗼-𝘃𝗶𝘀𝗶𝗼𝗻 𝘁𝗼 𝗮𝗻𝗮𝗹𝘆𝘀𝗲 𝗶𝗺𝗮𝗴𝗲𝘀.");
     }
     if (!/image/.test(mime)) {
-      return m.reply("Huh this is not an image!");
+      return m.reply("𝗛𝘂𝗵 𝘁𝗵𝗶𝘀 𝗶𝘀 𝗻𝗼𝘁 𝗮𝗻 𝗶𝗺𝗮𝗴𝗲!");
     }
     let _0x3439a2 = await client.downloadAndSaveMediaMessage(m.quoted);
     let _0x3dfb7c = await uploadtoimgur(_0x3439a2);
-    m.reply("A moment, lemme analyse the contents of the image...");
+    m.reply("𝗔 𝗺𝗼𝗺𝗲𝘁, 𝗹𝗲𝗺𝗺𝗲 𝗮𝗻𝗮𝗹𝘆𝘀𝗲 𝘁𝗵𝗲 𝗰𝗼𝗻𝘁𝗲𝗻𝘁𝘀 𝗼𝗳 𝘁𝗵𝗲 𝗜𝗺𝗮𝗴𝗲...");
     const _0x4e9e6a = new _0x817910("AIzaSyCcZqDMBa8FcAdBxqE1o6YYvzlygmpBx14");
     async function _0x309a3c(_0x1400ed, _0x1a081e) {
       const _0x53e4b2 = {
