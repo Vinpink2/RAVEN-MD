@@ -1985,92 +1985,92 @@ case 'ytsearch':
     }
     break;
 
-case "ytmp3": {
-if (!text) return m.reply("Provide a valid YouTube link!")
-
-	let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
-	if (!urls) return m.reply('Is this a YouTube link ?');
-	let urlIndex = parseInt(text) - 1;
-	if (urlIndex < 0 || urlIndex >= urls.length)
-		return m.reply('Invalid URL index');
-	await downloadMp3(urls);
-
-
-
-
-
-async function downloadMp3 (link) {
+case "ytmp3": case "yta": {
+const axios = require("axios");
+const path = require("path");
+const ffmpeg = require("fluent-ffmpeg");
 try {
 
-let data = await fetchJson (`https://widipe.com/download/ytdl?url=${link}`)
+if (!text) return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶𝗱 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗹𝗶𝗻𝗸!")
 
-await client.sendMessage(m.chat, {
- audio: {url: data.result.mp3},
-mimetype: "audio/mp3",
- fileName: `${data.result.title}.mp3`
- 
-    }, { quoted: m });
+	let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
+	if (!urls) return m.reply('𝗧𝗵𝗶𝘀 𝗶𝘀 𝗻𝗼𝘁 𝗮 𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗟𝗶𝗻𝗸');
+	let urlIndex = parseInt(text) - 1;
+	if (urlIndex < 0 || urlIndex >= urls.length)
+		return m.reply('𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗟𝗶𝗻𝗸.');
+	
 
-await client.sendMessage(m.chat, {
- document: {url: data.result.mp3},
-mimetype: "audio/mp3",
- fileName: `${data.result.title}.mp3`
- 
-    }, { quoted: m });
-  } catch (error) {
-    console.error('Error fetching the song:', error);
-    await m.reply(`Error.`)
-  }
+        let data = await fetchJson(`https://api.dreaded.site/api/ytdl/ytmp3?url=${text}`);
+        let videoUrl = data.result.downloadLink;
+
+let name = data.result.title;
+
+        let outputFileName = `${name}.mp3`;
+        let outputPath = path.join(__dirname, outputFileName);
+
+
+        const response = await axios({
+            url: videoUrl,
+            method: "GET",
+            responseType: "stream"
+        });
+
+
+        ffmpeg(response.data)
+            .toFormat("mp3")
+            .save(outputPath)
+            .on("end", async () => {
+                await client.sendMessage(
+                    m.chat,
+                    {
+                        document: { url: outputPath },
+                        mimetype: "audio/mp3",
+                        fileName: outputFileName,
+                    },
+                    { quoted: m }
+                );
+                fs.unlinkSync(outputPath);
+            })
+            .on("error", (err) => {
+                m.reply("𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗳𝗮𝗶𝗹𝗲𝗱\n" + err.message);
+            });
+
+    } catch (error) {
+        m.reply("𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗳𝗮𝗶𝗹𝗲𝗱\n" + error.message);
+    }
 }
-
-
-
-
-}
-break;
+		break;
   
 case 'ytmp4':
 case "ytv": {
-	const yts = require("yt-search");
-if (!text) return m.reply("Provide a valid YouTube link!")
+	try {
 
-	let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
-	if (!urls) return m.reply('Is this a YouTube link ?');
-	let urlIndex = parseInt(text) - 1;
-	if (urlIndex < 0 || urlIndex >= urls.length)
-		return m.reply('Invalid URL index');
-	await downloadMp4(urls);
+if (!text) return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶𝗱 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗹𝗶𝗻𝗸!")
 
-
+        let urls = text.match(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch\?v=|v\/|embed\/|shorts\/|playlist\?list=)?)([a-zA-Z0-9_-]{11})/gi);
+        if (!urls) return m.reply('𝗧𝗵𝗶𝘀 𝗶𝘀 𝗻𝗼𝘁 𝗮 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗹𝗶𝗻𝗸');
+        let urlIndex = parseInt(text) - 1;
+        if (urlIndex < 0 || urlIndex >= urls.length)
+                return m.reply('𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗹𝗶𝗻𝗸.');
 
 
-
-async function downloadMp4 (link) {
-try {
-
-let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
+        let data = await fetchJson (`https://api.dreaded.site/api/ytdl/ytmp4?url=${text}`)
+await client.sendMessage(m.chat, {
+  video: {url: data.result.downloadLink},
+mimetype: "video/mp4",
+ fileName: `${data.result.title}.mp4`}, { quoted: m });
 
 await client.sendMessage(m.chat, {
- video: {url: data.result.mp4},
+ document: {url: data.result.downloadLink},
 mimetype: "video/mp4",
- fileName: `${data.result.title}.mp4`
- 
-    }, { quoted: m });
+ fileName: `${data.result.title}.mp4` }, { quoted: m });
 
-await client.sendMessage(m.chat, {
- document: {url: data.result.mp4},
-mimetype: "video/mp4",
- fileName: `${data.result.title}.mp4`
- 
-    }, { quoted: m });
-  } catch (error) {
-    console.error('Error fetching the song:', error);
-    await m.reply(`Error.`)
-  }
+
+} catch (error) {
+
+m.reply("𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗳𝗮𝗶𝗹𝗲𝗱\n" + error)
+
 }
-
-
-
 
 }
 break;
