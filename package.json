@@ -37,6 +37,7 @@
      "os": "^0.1.2", 
      "genius-lyrics": "^4.4.3",
       "google-tts-api": "^2.0.2",
+      "tempmail.lol": "^4.1.0",
      "crypto": "^1.0.1",
       "imgur": "2.3.0",
      "figlet": "^1.5.2", 
