@@ -407,6 +407,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗦𝘂𝗯𝗷𝗲𝗰𝘁
 ┃✬│ 𝗗𝗲𝘀𝗰
 ┃✬│ 𝗟𝗲𝗮𝘃𝗲
+┃✯│ 𝗔𝗱𝗱
 ┃✬│ 𝗧𝗮𝗴𝗮𝗹𝗹
 ┃✬│ 𝗛𝗶𝗱𝗲𝘁𝗮𝗴
 ┃✬│ 𝗥𝗲𝘃𝗼𝗸𝗲
@@ -454,6 +455,8 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✯│ 𝗚𝗶𝘁𝗵𝘂𝗯
 ┃✯│ 𝗚𝗶𝘁𝗰𝗹𝗼𝗻𝗲
 ┃✯│ 𝗔𝗱𝘃𝗶𝗰𝗲
+┃✯│ 𝗥𝗲𝗺𝗼𝘃𝗲𝗯𝗴
+┃✯│ 𝗧𝘁𝘀
 ┃✯│ 𝗙𝗮𝗰𝘁
 ┃✯│ 𝗖𝗮𝘁𝗳𝗮𝗰𝘁
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
@@ -690,6 +693,34 @@ m.reply("An error occured.")
 
 	      }
 	      break;
+		      case "removebg": {
+		      try {
+
+const cap = "𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧";
+
+if (!m.quoted) return m.reply("Send the image then tag it with the command.");
+
+   if (!/image/.test(mime)) return m.reply("That is not an image, try again while quoting an actual image.");             
+
+let fdr = await client.downloadAndSaveMediaMessage(m.quoted)
+
+
+                    let fta = await uploadtoimgur(fdr)
+                    m.reply("𝗔 𝗺𝗼𝗺𝗲𝗻𝘁, 𝗥𝗮𝘃𝗲𝗻 𝗶𝘀 𝗲𝗿𝗮𝘀𝗶𝗻𝗴 𝘁𝗵𝗲 𝗯𝗮𝗰𝗸𝗴𝗿𝗼𝘂𝗻𝗱. . .");
+
+const image = `https://api.dreaded.site/api/removebg?imageurl=${fta}`
+
+
+await client.sendMessage(m.chat, { image: { url: image }, caption: cap}, {quoted: m });
+
+} catch (error) {
+
+m.reply("An error occured...")
+
+}
+
+      }
+	break;
 		     case 'fact': {
 	try {
 const data = await fetchJson('https://api.dreaded.site/api/fact');
@@ -720,9 +751,26 @@ m.reply('Something is wrong.')
 }
 
     }
-	      break; 
+	      break;
+		      case 'tts': {
 
-   case "gpt2": {
+const googleTTS = require('google-tts-api');
+
+if (!text) return m.reply("Povide a text for conversion !");
+
+ 
+
+const url = googleTTS.getAudioUrl(text, {
+  lang: 'hi-IN',
+  slow: false,
+  host: 'https://translate.google.com',
+});
+
+             client.sendMessage(m.chat, { audio: { url:url},mimetype:'audio/mp4', ptt: true }, { quoted: m });
+
+	}
+	 break;
+	     case "gpt2": {
 const { G4F } = require("g4f"); 
 if (!text) return m.reply("What's your question ?");
 
@@ -843,7 +891,7 @@ const rel = await quote(xf, pushname, pppuser)
 const fs = require("fs");
 
 if(!Owner) throw NotOwner; 
-if(!msgDreaded) { m.reply('Quote an image...') ; return } ;
+if(!msgDreaded) { m.reply('𝗤𝘂𝗼𝘁𝗲 𝗮𝗻 𝗶𝗺𝗮𝗴𝗲...') ; return } ;
 
 
 let media;
@@ -851,7 +899,7 @@ if (msgDreaded.imageMessage) {
      media = msgDreaded.imageMessage
 
   } else {
-    m.reply('This is not an image...'); return
+    m.reply('𝗛𝘂𝗵 𝘁𝗵𝗶𝘀 𝗶𝘀 𝗻𝗼𝘁 𝗮𝗻 𝗶𝗺𝗮𝗴𝗲...'); return
   } ;
 
 var medis = await client.downloadAndSaveMediaMessage(media);
@@ -885,11 +933,11 @@ client.query({
             })
                     
                     fs.unlinkSync(medis)
-                    m.reply("Bot Profile Picture Updated")
+                    m.reply("𝗣𝗿𝗼𝗳𝗶𝗹𝗲 𝗽𝗶𝗰𝘁𝘂𝗿𝗲 𝘂𝗽𝗱𝗮𝘁𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝗳𝘂𝗹𝗹𝘆✅")
 
 } catch (error) {
 
-m.reply("An error occured while updating bot profile photo\n" + error)
+m.reply("An error occured while updating profile photo\n" + error)
 
 }
 
@@ -1075,7 +1123,7 @@ for (const user of participant.filter((item) => item.attrs.error === 401 || item
 
     await m.reply(teza);
 
-    let links = `${pushname} is trying to add or request you to join the group ${groupMetadata.subject}:\n\nhttps://chat.whatsapp.com/${respon}\n\n${botname} 🤖`;
+    let links = `${pushname} is trying to add or request you to join the group ${groupMetadata.subject}:\n\nhttps://chat.whatsapp.com/${respon}\n\n${botname} 💠`;
 
     await client.sendMessage(jid, { text: links }, { quoted: m });
 }
