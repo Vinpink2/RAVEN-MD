@@ -702,8 +702,7 @@ await client.groupAcceptInvite("DefN96lXQ4i5iO1wDDeu2C");
       console.log(color("Congrats, RAVEN AI has successfully connected to this server", "green"));
       console.log(color("Follow me on Instagram as Nick_hunter9", "red"));
       console.log(color("Text the bot number with !menu to check my command list"));
-      client.sendMessage(owner + "@s.whatsapp.net", { text: `〘𝐑𝐀𝐕𝐄𝐍-𝐌𝐃 𝐇𝐀𝐒 𝐒𝐓𝐀𝐑𝐓𝐄𝐃. . .〙\n\n𝐁𝐎𝐓 𝐑𝐔𝐍𝐍𝐈𝐍𝐆\n\n𝐕𝐞𝐫𝐬𝐢𝐨𝐧 7.0.2\n\nincase of any issue contact
- https://wa.me/254114660061` });
+      client.sendMessage(owner + "@s.whatsapp.net", { text: `𝗕𝗼𝘁 𝗵𝗮𝘀 𝗦𝘁𝗮𝗿𝘁𝗲𝗱 » » »【𝗥𝗔𝗩𝗘𝗡-𝗠𝗗】` });
     }
     // console.log('Connected...', update)
   });
