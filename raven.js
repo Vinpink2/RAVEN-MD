@@ -238,10 +238,7 @@ async function audiovn () {
 	
 let { key } = await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.mp3'), mimetype:'audio/mp4', ptt: true}, {quoted: m })
 
-for (let i = 0; i < lod.length; i++) {
-await client.sendMessage(from, {text: lod[i], edit: key });
 }
-	}
  
     if (gptdm === 'TRUE' && m.chat.endsWith("@s.whatsapp.net")) {
 
@@ -271,7 +268,7 @@ var lod = [
    "💙",
 	"【𝗣𝗶𝗻𝗴𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲】"	
 ]
-let { key } = await client.sendMessage(from, {text: '𝗣𝗢𝗡𝗚'})
+let { key } = await client.sendMessage(from, {text: '𝗣𝗼𝗻𝗴'})
 
 for (let i = 0; i < lod.length; i++) {
 await client.sendMessage(from, {text: lod[i], edit: key });
@@ -1149,7 +1146,7 @@ for (let a of gcdata.participants) {
 
 let cont = './contacts.vcf'
 
-await m.reply('A moment, Raven is compiling '+gcdata.participants.length+' contacts into a vcf...');
+await m.reply('𝗔 𝗺𝗼𝗺𝗲𝗻𝘁, 𝗥𝗮𝘃𝗲𝗻 𝗶𝘀 𝗖𝗼𝗺𝗽𝗶𝗹𝗶𝗻𝗴 '+gcdata.participants.length+' 𝗖𝗼𝗻𝘁𝗮𝗰𝘁𝘀 𝗶𝗻𝘁𝗼 𝗮 𝗩𝗰𝗳...');
 
 await fs.writeFileSync(cont, vcard.trim())
 
@@ -2092,7 +2089,7 @@ break;
     case "ping": case "speed": {
                  
 	    await loading ()
-	     m.reply (`𝗣𝗢𝗡𝗚\n ${dreadedspeed.toFixed(4)} 𝗠𝘀`); 
+	     m.reply (`𝗣𝗼𝗻𝗴\n ${dreadedspeed.toFixed(4)} 𝗠𝘀`); 
          } 
  break; 
   
