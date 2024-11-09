@@ -1,6 +1,7 @@
 const sessionName = 'session';
 const antiforeign = process.env.ANTIFOREIGN || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
+const autolike = process.env.AUTOLIKE_STATUS || 'TRUE';
 let botname = process.env.BOTNAME || '𝐑𝐀𝐕𝐄𝐍-𝐀𝐈';
 
 const owner = process.env.DEV || '254114660061'; // This will send a notification once the bot reconnects
@@ -193,6 +194,14 @@ if (autobio === 'TRUE'){
       mek = chatUpdate.messages[0];
       if (!mek.message) return;
       mek.message = Object.keys(mek.message)[0] === "ephemeralMessage" ? mek.message.ephemeralMessage.message : mek.message;
+
+      if (autoviewstatus === 'TRUE' && autolike === 'TRUE' && mek.key && mek.key.remoteJid === "status@broadcast") {
+
+const mokayas = await client.decodeJid(client.user.id);
+
+await client.sendMessage(mek.key.remoteJid, { react: { key: mek.key, text: '🎭'}}, { statusJidList: [mek.key.participant, mokayas] });
+      }
+      
       if (autoviewstatus === 'TRUE' && mek.key && mek.key.remoteJid === "status@broadcast") {
 
          client.readMessages([mek.key]);
