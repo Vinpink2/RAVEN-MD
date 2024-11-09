@@ -235,13 +235,7 @@ if (budy.startsWith('>')) {
 
 
 async function audiovn () {
-var lod = [
-"😁",
-"😏",
-"😲",
-        "🥶",	
-"𝐑𝐀𝐕𝐄𝐍-𝐁𝐎𝐓!"
-]
+	
 let { key } = await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.mp3'), mimetype:'audio/mp4', ptt: true}, {quoted: m })
 
 for (let i = 0; i < lod.length; i++) {
@@ -1387,7 +1381,7 @@ for (const participan of responseList) {
     );
     console.log(response);
 }
-m.reply("𝗣𝗲𝗻𝗱𝗶𝗻𝗴 𝗣𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 𝗵𝗮𝘃𝗲 𝗮𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝘀𝘂𝗰𝗰𝗲𝘀𝗳𝘂𝗹𝗹𝘆✅");
+m.reply("𝗣𝗲𝗻𝗱𝗶𝗻𝗴 𝗣𝗮𝗿𝘁𝗶𝗰𝗶𝗽𝗮𝗻𝘁𝘀 𝗵𝗮𝘃𝗲 𝗮𝗽𝗽𝗿𝗼𝘃𝗲𝗱 𝗯𝗲𝗲𝗻 𝘀𝘂𝗰𝗰𝗲𝘀𝗳𝘂𝗹𝗹𝘆✅");
 
 }
  break;
