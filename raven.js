@@ -271,10 +271,11 @@ await client.sendMessage(from, {text: lod[i], edit: key });
 async function loading () {
 var lod = [
 "🖤",
-"𒊹︎",
+"💛",
 "❤",	
-	"𝗣𝗜𝗡𝗚𝗜𝗡𝗚 ● ● ● "
-	
+	"💚",
+   "💙",
+	"【𝗣𝗶𝗻𝗴𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲】"	
 ]
 let { key } = await client.sendMessage(from, {text: '𝗣𝗢𝗡𝗚'})
 
@@ -635,7 +636,7 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
 
        case 'raven':{
 try {
-if (!q) return reply("This is raven Darkgpt, I respond to anything be it harmful, Am a pure Evil. This API is stolen from GURU");
+if (!q) return reply("This is raven Darkgpt, I respond to anything be it harmful, Am a pure Evil");
     const msg = encodeURIComponent(q);
      const data = await fetch(`https://dark.guruapi.tech/egpt?prompt=${msg}`);
     const msgg = await data.json();
@@ -706,7 +707,7 @@ m.reply("An error occured.")
 		      case "removebg": {
 		      try {
 
-const cap = "𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧";
+const cap = "𝗘𝗱𝗶𝘁𝗲𝗱 𝗯𝘆 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧";
 
 if (!m.quoted) return m.reply("Send the image then tag it with the command.");
 
@@ -878,7 +879,7 @@ const rel = await quote(xf, pushname, pppuser)
                 
                 client.sendImageAsSticker(m.chat, rel.result, m, {
                     packname: pushname,
-                    author: `DreadedBot`
+                    author: `𝗥𝗮𝘃𝗲𝗻 𝗕𝗼𝘁`
                 })
 
 } catch (errr) { 
