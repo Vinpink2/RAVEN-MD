@@ -234,7 +234,7 @@ if (budy.startsWith('>')) {
  
 
 
-async function audiovn () {
+async function mp3d () {
 	
 let { key } = await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.mp3'), mimetype:'audio/mp4', ptt: true}, {quoted: m })
 
@@ -262,11 +262,13 @@ let { key } = await client.sendMessage(m.chat, {audio: fs.readFileSync('./menu.m
 async function loading () {
 var lod = [
 "🖤",
-"💛",
+"🤬",
 "❤",	
-	"💚",
+	"😡",
    "💙",
-	"【𝗣𝗶𝗻𝗴𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲】"	
+	"😂",
+	"💛",
+"【𝗣𝗶𝗻𝗴𝗶𝗻𝗴 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲】"	
 ]
 let { key } = await client.sendMessage(from, {text: '𝗣𝗼𝗻𝗴'})
 
@@ -334,7 +336,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
       switch (command) {
       case "help":
         case "menu":
-		      await audiovn ()
+		      await mp3d ()
 		      
 let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬╭═───────◇───────═╮
@@ -342,7 +344,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : 𝗛𝗲𝗿𝗼𝗸𝘂
 ┃✬│ 𝗦𝗽𝗲𝗲𝗱 : ${dreadedspeed.toFixed(4)} 𝗠𝘀
 ┃✬│ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗥𝗔𝗠 : 32𝗚𝗕 𝗼𝗳 64𝗚𝗕
-┃✬│ 𝗨𝗽𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+┃✬│ 𝗗𝗮𝘁𝗮𝗕𝗮𝘀𝗲 : 𝗡𝗼𝗻𝗲
 ┃✬│●───●───●───●─●╮
 ┃✬│  ▋▋𝗥𝗔𝗩𝗘𝗡 𝗠𝗗 ▋▋
 ┃✬│●───●───●───●─●╯
@@ -1434,24 +1436,26 @@ case 'restart':
   process.exit()  
   break;
 	      case "remove": case "kick": { 
-try {
-  if (!m.isGroup) throw group; 
-  if (!isBotAdmin) throw botAdmin; 
-  if (!isAdmin) throw admin;
-  if (!m.quoted) throw `U didn't tag a user`
-    
-	let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'];
- if (!users) throw NotOwner; 
- if (users  == client.decodeJid(client.user.id)) throw 'Bot cannot remove itself 😡';
- if (users == Owner) { m.reply('Its owner number')}; 
-                 await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
-await m.reply('Successfully removed!'); 
-}catch (errr) { 
- await reply("Something is fatally Wrong, i don't know!")}
 
-     
-	      }
-    
+       if (!m.isGroup) throw group; 
+       if (!isBotAdmin) throw botAdmin; 
+      if (!isAdmin) throw admin;
+  
+    if (!m.quoted && (!m.mentionedJid || m.mentionedJid.length === 0)) {
+            return m.reply("Who should i remove !?");
+        }
+        let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : null;
+        const parts = users.split('@')[0];
+
+if (users == "254114660061@s.whatsapp.net") return m.reply("It's an Owner Number! 😡");
+
+	  if (users  == client.decodeJid(client.user.id)) throw 'I cannot remove Myself 😡';
+
+                 await client.groupParticipantsUpdate(m.chat, [users], 'remove'); 
+
+        m.reply(`${parts} has been removed successfully!`); 
+
+}
   break;
 
 
@@ -2119,7 +2123,7 @@ break;
 
 case "alive": { 
   
- client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋 ${m.pushname}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, {quoted:m});  
+ client.sendMessage(m.chat, { video: { url: 'https://i.imgur.com/JqnCmAX.mp4' }, caption: `𝗛𝗲𝘆👋 ${m.pushName}, 𝗥𝗔𝗩𝗘𝗡 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗔𝗹𝗶𝘃𝗲 𝘀𝗶𝗻𝗰𝗲  ${runtime(process.uptime())}`, fileLength: "9999999999898989899999999" }, {quoted:m});  
  }
 break;
   case "apk":
