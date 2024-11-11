@@ -78,10 +78,10 @@
    }, 
    "repository": { 
      "type": "git", 
-     "url": "git+https://github.com/Fortunatusmokaya/DREADED-AI.git" 
+     "url": "git+https://github.com/HunterNick2/RAVEN-MD.git" 
    }, 
    "bugs": { 
-     "url": "https://github.com/Fortunatusmokaya/DREADED-AI/issues" 
+     "url": "https://github.com/HunterNick2/RAVEN-MD/issues" 
    }, 
-   "homepage": "https://github.com/Fortunatusmokaya/DREADED-AI#readme" 
+   "homepage": "https://github.com/HunterNick2/RAVEN-MD#readme" 
    }
