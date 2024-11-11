@@ -434,6 +434,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✫│ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲
 ┃✯│ 𝗨𝗽𝘁𝗶𝗺𝗲
 ┃✫│ 𝗗𝗽
+┃✯│ 𝗗𝗹𝘁
 ┃✬│ 𝗠𝗮𝗶𝗹
 ┃✫│ 𝗜𝗻𝗯𝗼𝘅
 ┃✯│ 𝗡𝗲𝘄𝘀
@@ -2015,6 +2016,7 @@ let name = data.result.title;
                         document: { url: outputPath },
                         mimetype: "audio/mp3",
                         fileName: outputFileName,
+			caption: "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧",
                     },
                     { quoted: m }
                 );
@@ -2052,6 +2054,7 @@ mimetype: "video/mp4",
 await client.sendMessage(m.chat, {
  document: {url: data.result.downloadLink},
 mimetype: "video/mp4",
+caption: "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧",
  fileName: `${data.result.title}.mp4` }, { quoted: m });
 
 
@@ -2314,7 +2317,7 @@ case "movie":
          let res = groups.map(v => v.id) 
          reply(` Broadcasting in ${res.length} Group Chat, in ${res.length * 1.5} seconds`) 
          for (let i of res) { 
-             let txt = `*_</ 𝐑𝐀𝐕𝐄𝐍 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 >\n\n🀄 Message: ${text}\n\nAuthor: ${pushname}_*` 
+             let txt = `𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧 𝗕𝗥𝗢𝗔𝗗𝗖𝗔𝗦𝗧 >\n\n🀄 Message: ${text}\n\nAuthor: ${pushname}` 
              await client.sendMessage(i, { 
                  image: { 
                      url: "https://telegra.ph/file/416c3ae0cfe59be8db011.jpg" 
