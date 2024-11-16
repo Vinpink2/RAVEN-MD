@@ -1915,50 +1915,32 @@ const Buffer = await stickerResult.toBuffer();
 }
 break;
  
-         case 'song': {
-if (!text) return reply(`Where is your song name? Example : ${prefix + command} Alan walker faded`);
-const yts = require("yt-search");
+	      case "song": {
+		     const yts = require("yt-search");
+try {
+
+if (!text) return m.reply("What song do you want to download ?")
+
 let search = await yts(text);
-let anup3k = search.videos[0];
-if (!anup3k) return reply("Song not found,,try another .....!");
-const apiUrl = `https://widipe.com/download/ytdl?url=${encodeURIComponent(anup3k.url)}`;
-let audioResponse;
-try {
-audioResponse = await axios.get(apiUrl);
-} catch (error) {
-console.error("Error fetching audio:", error);
-return reply("Failed to download the audio. Please try again.");
-}
-if (!audioResponse.data.status) {
-return reply("Failed to retrieve audio URL. Please try again.");
-}
-const mp3Url = audioResponse.data.result.mp3;
-// Download the MP3 file
-let mp3Buffer;
-try {
-const mp3DownloadResponse = await axios.get(mp3Url, { responseType: 'arraybuffer' });
-mp3Buffer = Buffer.from(mp3DownloadResponse.data);
-} catch (error) {
-console.error("Error downloading MP3:", error);
-return reply("Failed to download the MP3. Please try again Later.");
-}
+        let link = search.all[0].url;
+
+        let data = await fetchJson (`https://api.dreaded.site/api/ytdl/video?url=${link}`)
+
+
 await client.sendMessage(m.chat, {
-audio: mp3Buffer,
-fileName: anup3k.title + '.mp3',
-mimetype: 'audio/mp4',
-ptt: true,
-contextInfo: {
-externalAdReply: {
-title: anup3k.title,
-body: "RAVEN-BOT",
-thumbnail: await fetch(anup3k.thumbnail), // Use thumbnail from the search result
-mediaType: 2,
-mediaUrl: anup3k.url,
+ audio: {url: data.result.downloadLink},
+mimetype: "audio/mp4",
+ fileName: `${search.all[0].title}.mp3` }, { quoted: m });
+
+
+} catch (error) {
+
+m.reply("Download failed\n" + error)
+
 }
-},
-}, { quoted: m });
-}
-break;
+
+			     }
+		      break;
  
        case "play2":
 		      {
@@ -2086,6 +2068,7 @@ if (!text) return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶�
 await client.sendMessage(m.chat, {
   video: {url: data.result.downloadLink},
 mimetype: "video/mp4",
+caption: "𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧",
  fileName: `${data.result.title}.mp4`}, { quoted: m });
 
 await client.sendMessage(m.chat, {
@@ -2146,7 +2129,7 @@ break;
  } 
  break;
 		      case 'runtime':
-		let raven = `𝗥𝗮𝘃𝗲𝗻 𝗕𝗼𝘁 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗿𝘂𝗻𝗻𝗶𝗻𝗴 𝘀𝗶𝗻𝗰𝗲 ${runtime(process.uptime())}`
+		let raven = `𝗥𝗮𝘃𝗲𝗻 𝗵𝗮𝘀 𝗯𝗲𝗲𝗻 𝗿𝘂𝗻𝗻𝗶𝗻𝗴 𝘀𝗶𝗻𝗰𝗲 ${runtime(process.uptime())}`
                 client.sendMessage(m.chat, {
                     text: raven,
                     contextInfo: {
