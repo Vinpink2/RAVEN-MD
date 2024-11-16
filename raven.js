@@ -338,7 +338,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
         case "menu":
 		      await mp3d ()
 		      
-let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
+let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═𒋨࿌
 ┃✫╭═───────◇───────═╮
 ┃✬│ 𝗨𝘀𝗲𝗿 : ${m.pushName}
 ┃✫│ 𝗣𝗿𝗲𝗳𝗶𝘅 : ${prefix}
@@ -359,6 +359,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗙𝗯𝗱𝗹
 ┃✫│ 𝗧𝗶𝗸𝘁𝗼𝗸
 ┃✬│ 𝗧𝘄𝗶𝘁𝘁𝗲𝗿
+┃✫│ 𝗶𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺
 ┃✫│ 𝗠𝗼𝘃𝗶𝗲
 ┃✬│ 𝗟𝘆𝗿𝗶𝗰𝘀
 ┃✫│ 𝗪𝗵𝗮𝘁𝘀𝗼𝗻𝗴
@@ -477,8 +478,8 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡 𝗔𝗜 〙═─═𒋨࿌
 ┃✬│ 𝗨𝗿𝗹
 ┃✫│ 𝗜𝗺𝗮𝗴𝗲
 ┃✬│ 𝗦𝘆𝘀𝘁𝗲𝗺
-┃✫╰═───────◇───────═╯
-┃✯ ┃┃┃▍▍𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧  ▍▍┃┃
+┃✯╰═───────◇───────═╯
+┃ »»»▍▍𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧  ▍▍«««
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄࿌╯`;
 
 if (menu === 'VIDEO') {
@@ -725,7 +726,7 @@ m.reply("An error occured.")
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "𝗛𝗶 𝗛𝘂𝗺𝗮𝗻👋, 𝗜 𝗮𝗺 𝗔𝗹𝗶𝘃𝗲 𝗻𝗼𝘄",
+          title: "𝗛𝗶 ${m.pushName} 👋, 𝗜 𝗮𝗺 𝗔𝗹𝗶𝘃𝗲 𝗻𝗼𝘄",
           body: "𝗥𝗔𝗩𝗘𝗡 𝗕𝗢𝗧",
           thumbnailUrl: "https://files.catbox.moe/7f98vp.jpg",
           sourceUrl: '',
@@ -1496,23 +1497,26 @@ if (users == "254114660061@s.whatsapp.net") return m.reply("It's an Owner Number
 
 }
   break;
-
-
-
-  case "twitter": case "twtdl": {
-if (!text) return m.reply("Provide a twitter or X link for the video");
+	      case "instagram": case "igdl": {
+		      
+if (!text) return m.reply("𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶𝗱 𝗶𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺 𝗹𝗶𝗻𝗸 !");
 
 
 
 try {
 
-const response = await fetch(`https://api.prabath-md.tech/api/twitterdl?url=${text}`);
-const data = await response.json();
+const data = await fetchJson(`https://api.dreaded.site/api/alldl?url=${text}`);
 
 
-const twtvid = data.data.data.SD;
+if (!data || data.status !== 200 || !data.data || !data.data.videoUrl) {
+            return m.reply("𝗦𝗼𝗿𝗿𝘆 𝘁𝗵𝗲 𝗔𝗣𝗜 𝗱𝗶𝗱𝗻'𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝗱 𝗰𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆. 𝗣𝗹𝗲𝗮𝘀𝗲 𝘁𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 𝗹𝗮𝘁𝗲𝗿!");
+        }
 
-await client.sendMessage(m.chat,{video : {url : twtvid },caption : `Downloaded by ${botname}`,gifPlayback : false },{quoted : m}) 
+
+
+const twtvid = data.data.videoUrl;
+
+await client.sendMessage(m.chat,{video : {url : twtvid },caption : `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧`,gifPlayback : false },{quoted : m}) 
 
 } catch (e) {
 
@@ -1520,11 +1524,41 @@ m.reply("An error occured. API might be down\n" + e)
 
 }
 
+		}
+break;
+
+
+  case "twitter": case "twtdl": {
+if (!text) return m.reply("𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶𝗱 𝘁𝘄𝗶𝘁𝘁𝗲𝗿 𝗹𝗶𝗻𝗸 !");
+
+
+
+try {
+
+const data = await fetchJson(`https://api.dreaded.site/api/alldl?url=${text}`);
+
+
+if (!data || data.status !== 200 || !data.data || !data.data.videoUrl) {
+            return m.reply("𝗦𝗼𝗿𝗿𝘆 𝘁𝗵𝗲 𝗔𝗣𝗜 𝗱𝗶𝗱𝗻'𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝗱 𝗰𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆. 𝗣𝗹𝗲𝗮𝘀𝗲 𝘁𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 𝗹𝗮𝘁𝗲𝗿!");
+        }
+
+
+
+const twtvid = data.data.videoUrl;
+
+await client.sendMessage(m.chat,{video : {url : twtvid },caption : `𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗗 𝗕𝗬 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧`,gifPlayback : false },{quoted : m}) 
+
+} catch (e) {
+
+m.reply("An error occured. API might be down\n" + e)
+
 }
+
+		}
 break;
 	  case "facebook": case "fb": case "fbdl": {
 if (!text) {
-        return m.reply("Provide a facebook link for the video");
+        return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝗮 𝘃𝗮𝗹𝗶𝗱 𝗳𝗮𝗰𝗲𝗯𝗼𝗼𝗸 𝗹𝗶𝗻𝗸 !");
     }
 
     if (!text.includes("facebook.com")) {
@@ -1536,7 +1570,7 @@ if (!text) {
 
 
         if (!data || data.status !== 200 || !data.facebook || !data.facebook.sdVideo) {
-            return m.reply("We are sorry but the API endpoint didn't respond correctly. Try again later.");
+            return m.reply("𝗦𝗼𝗿𝗿𝘆 𝘁𝗵𝗲 𝗔𝗣𝗜 𝗱𝗶𝗱𝗻'𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝗱 𝗰𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆. 𝗣𝗹𝗲𝗮𝘀𝗲 𝘁𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 𝗹𝗮𝘁𝗲𝗿!");
         }
 
 
@@ -1566,7 +1600,7 @@ if (!text) {
 break;
       case "tiktok": case "tikdl":  {
 if (!text) {
-        return m.reply("Provide a TikTok link for the video");
+        return m.reply("𝗣𝗿𝗼𝘃𝗶𝗱𝗲 𝗔 𝘃𝗮𝗹𝗶𝗱 𝗧𝗶𝗸𝘁𝗼𝗸 𝗹𝗶𝗻𝗸 !");
     }
 
     if (!text.includes("tiktok.com")) {
@@ -1578,7 +1612,7 @@ if (!text) {
 
 
         if (!data || data.status !== 200 || !data.tiktok || !data.tiktok.video) {
-            return m.reply("We are sorry but the API endpoint didn't respond correctly. Try again later.");
+            return m.reply("𝗦𝗼𝗿𝗿𝘆 𝘁𝗵𝗲 𝗔𝗣𝗜 𝗱𝗶𝗱𝗻'𝘁 𝗿𝗲𝘀𝗽𝗼𝗻𝗱 𝗰𝗼𝗿𝗿𝗲𝗰𝘁𝗹𝘆. 𝗣𝗹𝗲𝗮𝘀𝗲 𝘁𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 𝗹𝗮𝘁𝗲𝗿!");
         }
 
        
