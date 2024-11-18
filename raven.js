@@ -338,7 +338,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
         case "menu":
 		      await mp3d ()
 		      
-let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═𒋨࿌
+let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡  𝗕𝗢𝗧 〙═─═𒋨࿌
 ┃✫╭═───────◇───────═╮
 ┃✬│ 𝗨𝘀𝗲𝗿 : ${m.pushName}
 ┃✫│ 𝗣𝗿𝗲𝗳𝗶𝘅 : ${prefix}
@@ -377,13 +377,16 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═�
 ┃✬│ 𝗦𝗰𝗿𝗲𝗲𝗻𝘀𝗵𝗼𝘁
 ┃✫│ 𝗠𝗶𝘅
 ┃✬│ 𝗧𝗮𝗸𝗲
+┃✫│ 𝗧𝘄𝗲𝗲𝘁
 ┃✫│ 𝗤𝘂𝗼𝘁𝗲𝗹𝘆
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄𖤓╯
 ●═════ 〘 𝗚𝗣𝗧 〙═────═●
 ╭══───────◇───────══╮
 ┃✬│ 𝗔𝗶
+┃✫│ 𝗗𝗲𝗳𝗶𝗻𝗲
 ┃✫│ 𝗥𝗮𝘃𝗲𝗻
 ┃✬│ 𝗚𝗲𝗺𝗶𝗻𝗶
+┃✯│ 𝗚𝗼𝗴𝗴𝗹𝗲
 ┃✫│ 𝗚𝗽𝘁
 ┃✬│ 𝗚𝗽𝘁2                                                                                                                                                                                                                                                        
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄𖤓╯
@@ -415,6 +418,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═�
 ╰═══༄༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ●═══ 〘 𝗖𝗢𝗗𝗜𝗡𝗚 〙 ═───═●
 ╭══───────◇───────══╮
+┃✫│ 𝗖𝗮𝗿𝗯𝗼𝗻
 ┃✯│ 𝗖𝗼𝗺𝗽𝗶𝗹𝗲-𝗰
 ┃✫│ 𝗖𝗼𝗺𝗽𝗶𝗹𝗲-𝗰++
 ┃✯│ 𝗖𝗼𝗺𝗽𝗶𝗹𝗲-𝗷𝘀
@@ -458,6 +462,10 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═�
 ┃✫│ 𝗦𝗮𝘃𝗲
 ┃✬│ >
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
+●═══ 〘 𝗣𝗥𝗔𝗡𝗞  〙═──═●
+╭══───────◇───────══╮
+┃✯│ 𝗛𝗮𝗰𝗸
+╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ●═══ 〘 𝗠𝗜𝗦𝗖  〙═──═●
 ╭══───────◇───────══╮
 ┃✫│ 𝗪𝗲𝗮𝘁𝗵𝗲𝗿
@@ -469,6 +477,8 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═�
 ┃✯│ 𝗧𝘁𝘀
 ┃✫│ 𝗙𝗮𝗰𝘁
 ┃✯│ 𝗖𝗮𝘁𝗳𝗮𝗰𝘁
+┃✫│ 𝗤𝘂𝗼𝘁𝗲𝘀
+┃✯│ 𝗣𝗶𝗰𝗸𝘂𝗽𝗹𝗶𝗻𝗲
 ╰══࿌༄༄༄༄༄༄༄༄༄༄༄࿌╯
 ●═══ 〘 𝗢𝗧𝗛𝗘𝗥𝗦  〙═──═●
 ╭══───────◇───────══╮
@@ -479,7 +489,7 @@ let cap = `╭═══𒋨〘 𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧 〙═─═�
 ┃✫│ 𝗜𝗺𝗮𝗴𝗲
 ┃✬│ 𝗦𝘆𝘀𝘁𝗲𝗺
 ┃✯╰═───────◇───────═╯
-┃《»»»▍▍𝗥𝗔𝗩𝗘𝗡==𝗕𝗢𝗧  ▍▍«««》
+┃《»»»▍▍𝗥𝗔𝗩𝗘𝗡  𝗕𝗢𝗧  ▍▍«««》
 ╰═༄༄༄༄༄༄༄༄༄༄༄༄༄࿌╯`;
 
 if (menu === 'VIDEO') {
@@ -583,7 +593,187 @@ break;
 			client.sendMessage(m.chat, { image: proses, caption: '𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 𝗯𝘆 𝗥𝗮𝘃𝗲𝗻-𝗕𝗼𝘁'}, { quoted: m })
 			}
 			break;
+		      
+		      case 'carbon': {
+		      const fetch = require('node-fetch');
 
+  let cap = `𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗘𝗗 𝗕𝗬 ${botname}`;
+
+  if (m.quoted && m.quoted.text) {
+    const forq = m.quoted.text;
+
+    try {
+      let response = await fetch('https://carbonara.solopov.dev/api/cook', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          code: forq,
+          backgroundColor: '#1F816D',
+        }),
+      });
+
+      if (!response.ok) return m.reply('API failed to fetch a valid response.')
+
+      let per = await response.buffer();
+
+      await client.sendMessage(m.chat, { image: per, caption: cap }, { quoted: m });
+    } catch (error) {
+      m.reply("An error occured\n" + error)
+    }
+  } else {
+    m.reply('Quote a code message');
+  }
+}
+	 break;
+
+		case 'define': {
+		      try {
+        if (!text) {
+            return m.reply('Please provide a word.');
+        }
+
+        const word = encodeURIComponent(text);
+
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+
+        if (!response.ok) {
+            return m.reply('Failed to fetch data. Please try again later.');
+        }
+
+        const data = await response.json();
+
+        if (!data || !data[0] || !data[0].meanings || data[0].meanings.length === 0) {
+            return m.reply('No definitions found for the provided word.');
+        }
+
+        const definitionData = data[0];
+        const definition = definitionData.meanings[0].definitions[0].definition;
+        
+        const message = `${definition}`;
+
+        await client.sendMessage(m.chat, { text: message }, { quoted: m });
+
+    } catch (error) {
+        console.error("Error occurred:", error);
+        m.reply('An error occurred while fetching the data. Please try again later.\n' + error);
+    }
+}
+	break;
+	         case "tweet": {
+		      if (!text) return m.reply("provide some text for the tweet");
+
+const displayname = pushname;
+const username = m.sender.split('@')[0];
+const avatar = await client.profilePictureUrl(m.sender, 'image').catch(_ => 'https://i.imgur.com/vuxJCTB.jpeg');
+const replies = "246";
+const retweets = "125";
+const theme = "dark";
+
+const imageurl = `https://some-random-api.com/canvas/misc/tweet?displayname=${encodeURIComponent(displayname)}&username=${encodeURIComponent(username)}&avatar=${encodeURIComponent(avatar)}&comment=${encodeURIComponent(text)}&replies=${encodeURIComponent(replies)}&retweets=${encodeURIComponent(retweets)}&theme=${encodeURIComponent(theme)}`;
+
+
+
+await client.sendMessage(m.chat, { image: { url: imageurl}, caption: `𝗖𝗼𝗻𝘃𝗲𝗿𝘁𝗲𝗱 𝗯𝘆 𝗥𝗔𝗩𝗘𝗡-𝗕𝗢𝗧`}, { quoted: m}) 
+
+	}
+	 break;
+		      case "pickupline": {
+		      const API_URL = 'https://api.popcat.xyz/pickuplines';
+
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error('Failed to fetch data');
+
+        const { pickupline } = await response.json();
+        const lineMessage = `${pickupline}`;
+
+        await client.sendMessage(m.chat, { text: lineMessage }, { quoted: m });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        await client.sendMessage(m.chat, { text: 'An error occurred while fetching the fact.' }, { quoted: m });
+    }
+}
+	break;
+		      case "quotes": {
+		      const API_URL = 'https://favqs.com/api/qotd';
+
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error('Failed to fetch data');
+
+        const { quote } = await response.json();
+        const quoteMessage = `${quote.body}, ${quote.author}`;
+
+        await client.sendMessage(m.chat, { text: quoteMessage }, { quoted: m });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        await client.sendMessage(m.chat, { text: 'An error occurred while fetching the fact.' }, { quoted: m });
+    }
+}
+	break;
+		      case "goggle": {
+		      const axios = require("axios");
+        if (!text) {
+            m.reply('Provide a search term!\nEg: .Google What is treason')
+            return;
+        }
+        let {
+            data
+        } = await axios.get(`https://www.googleapis.com/customsearch/v1?q=${text}&key=AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWI&cx=baf9bdb0c631236e5`)
+        if (data.items.length == 0) {
+            m.reply("❌ Unable to find a result")
+            return;
+        }
+        let tex = `GOOGLE SEARCH\n🔍 Term:- ${text}\n\n`;
+        for (let i = 0; i < data.items.length; i++) {
+            tex += `🪧 Title:- ${data.items[i].title}\n🖥 Description:- ${data.items[i].snippet}\n🌐 Link:- ${data.items[i].link}\n\n`
+        }
+        m.reply(tex)
+       
+
+    }
+      break;
+		      case "hack": {
+		      try {
+			      
+    const steps = [
+      '⚠️𝗜𝗻𝗶𝘁𝗶𝗹𝗶𝗮𝘇𝗶𝗻𝗴 𝗛𝗮𝗰𝗸𝗶𝗻𝗴 𝗧𝗼𝗼𝗹𝘀⚠️...',
+      '𝗜𝗻𝗷𝗲𝗰𝘁𝗶𝗻𝗴 𝗠𝗮𝗹𝘄𝗮𝗿𝗲🐛',
+      '```██ 10%``` ⏳',
+      '```████ 20%``` ⏳',
+      '```██████ 30%``` ⏳',
+      '```████████ 40%``` ⏳',
+      '```██████████ 50%``` ⏳',
+      '```████████████ 60%``` ⏳',
+      '```██████████████ 70%``` ⏳',
+      '```████████████████ 80%``` ⏳',
+      '```██████████████████ 90%``` ⏳',
+      '```████████████████████ 100%``` ✅',
+      "```𝗦𝘆𝘀𝘁𝗲𝗺 𝗛𝗶𝗷𝗮𝗰𝗸𝗶𝗻𝗴 𝗼𝗻 𝗽𝗿𝗼𝗰𝗲𝘀𝘀..```\n```𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗻𝗴 𝘁𝗼 𝘁𝗵𝗲 𝗦𝗲𝗿𝘃𝗲𝗿 𝘁𝗼 𝗙𝗶𝗻𝗱 𝗘𝗿𝗿𝗼𝗿 404```",
+    "```𝗦𝘂𝗰𝗰𝗲𝘀𝗳𝘂𝗹𝗹𝘆 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱...\n𝗥𝗲𝗮𝗰𝗲𝗶𝘃𝗶𝗻𝗴 𝗗𝗮𝘁𝗮...```",
+    "```𝗗𝗮𝘁𝗮 𝗧𝗿𝗮𝗻𝘀𝗳𝗲𝗿𝗲𝗱 𝗙𝗿𝗼𝗺 𝗱𝗲𝘃𝗶𝗰𝗲 100% 𝗖𝗼𝗺𝗽𝗹𝗲𝘁𝗲𝗱\n𝗘𝗿𝗮𝘀𝗶𝗻𝗴 𝗮𝗹𝗹 𝗘𝘃𝗶𝗱𝗲𝗻𝗰𝗲, 𝗞𝗶𝗹𝗹𝗶𝗻𝗴 𝗮𝗹𝗹 𝗠𝗮𝗹𝘄𝗮𝗿𝗲𝘀🐛...```",
+    "```𝗦𝗘𝗡𝗗𝗜𝗡𝗗 𝗟𝗢𝗚 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗦...```",
+    "```𝗦𝗨𝗖𝗖𝗘𝗦𝗙𝗨𝗟𝗟𝗬 𝗦𝗘𝗡𝗧 𝗗𝗔𝗧𝗔 𝗔𝗻𝗱 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝗼𝗻 𝗱𝗶𝘀𝗰𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱```",
+    "```𝗕𝗔𝗖𝗞𝗟𝗢𝗚𝗦 𝗖𝗟𝗘𝗔𝗥𝗘𝗗```"
+    ];
+			      
+    for (const line of steps) {
+      await client.sendMessage(m.chat, { text: line }, { quoted: m });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+
+  } catch (error) {
+    console.error('Error during prank:', error);
+
+    client.sendMessage(m.chat, {
+      text: `❌ *Error!* Something went wrong. Reason: ${error.message}. Please try again later.`
+    });
+  }
+}
+  
+  break;
 	            
 case "compile-py":
 
@@ -898,27 +1088,22 @@ reply(resultt1.stderr);
 break;
 
   case 'quotely': {
-try {
-if (!m.quoted.text) throw 'Tag a text';
-let xf = m.quoted.text;
+const axios = require("axios");
 
-                const {
-                    quote
-                } = require('./lib/dreadquotely.js')
-                
-                let pppuser = await client.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/eebe191a0520a79979b34.jpg')
-                
-const rel = await quote(xf, pushname, pppuser)
-                
-                client.sendImageAsSticker(m.chat, rel.result, m, {
-                    packname: pushname,
-                    author: `𝗥𝗮𝘃𝗲𝗻 𝗕𝗼𝘁`
-                })
+    if (!text) return m.reply("provide some text for quotely");
 
-} catch (errr) { 
- await reply("Tag some text for quotely")}
+    const avatar = 'https://i.imgur.com/OqRfngQ.jpeg'
 
-            }
+    const imageUrl = `https://aemt.me/quotely?avatar=${avatar}&name=${pushname}&text=${text}`;
+
+    try {
+        const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+        const imageBuffer = Buffer.from(response.data, 'binary');
+        await client.sendImageAsSticker(m.chat, imageBuffer, m, { packname: pushname, author: "Raven" });
+    } catch (error) {
+        console.error('Error fetching image:', error);
+    }
+}
    break;
 		      case "fullpp": {
 		      const { S_WHATSAPP_NET } = require('@whiskeysockets/baileys');
@@ -1821,7 +2006,7 @@ break;
           case "leave": { 
                  if (!Owner) throw NotOwner;
 		 if (!m.isGroup) throw group;
- await client.sendText(m.chat, 'GoodBye Everyone🥲. Raven is leaving now Guess we will never meet again..😔'); 
+ await client.sendMessage(m.chat, { text : '𝗚𝗼𝗼𝗱𝗯𝘆𝗲 𝗲𝘃𝗲𝗿𝘆𝗼𝗻𝗲👋. 𝗥𝗮𝘃𝗲𝗻-𝗔𝗶 𝗶𝘀 𝗟𝗲𝗮𝘃𝗶𝗻𝗴 𝘁𝗵𝗲 𝗚𝗿𝗼𝘂𝗽 𝗻𝗼𝘄...' , mentions: participants.map(a => a.id)}, { quoted : m }); 
                  await client.groupLeave(m.chat); 
   
              } 
@@ -1851,14 +2036,14 @@ break;
              if (!m.isGroup) throw group; 
              if (!isBotAdmin) throw botAdmin; 
              if (!isAdmin) throw admin; 
-            client.sendMessage(m.chat, { text : q ? q : '☞︎︎︎ 𝐈 𝐃𝐈𝐃 𝐍𝐎𝐓 𝐓𝐀𝐆 𝐘𝐎𝐔😂 ☜︎︎︎' , mentions: participants.map(a => a.id)}, { quoted: m }); 
+            client.sendMessage(m.chat, { text : q ? q : '😅𝗕𝗹𝗶𝗻𝗱 𝗧𝗮𝗴𝘀😅' , mentions: participants.map(a => a.id)}, { quoted: m }); 
              } 
  break; 
  case "tagall": { 
                  if (!m.isGroup) throw group; 
                  if (!isBotAdmin) throw botAdmin; 
                  if (!isAdmin) throw admin; 
- let teks = `𝐎𝐍𝐋𝐘 𝐅𝐎𝐎𝐋𝐒 𝐀𝐑𝐄 𝐓𝐀𝐀𝐆𝐄𝐃 𝐇𝐄𝐑𝐄💀: 
+ let teks = `𝗢𝗻𝗹𝘆 𝗳𝗼𝗼𝗹𝘀 𝗮𝗿𝗲 𝘁𝗮𝗴𝗴𝗲𝗱 𝗵𝗲𝗿𝗲😅: 
    
   Message ${q ? q : ''}*\n\n`; 
                  for (let mem of participants) { 
