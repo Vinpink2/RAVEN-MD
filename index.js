@@ -165,7 +165,7 @@ async function startHisoka() {
   const client = dreadedConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["CHATGPT - DREADED", "Safari", "5.1.7"],
+    browser: ["RAVEN - AI", "Safari", "5.1.7"],
     auth: state,
 syncFullHistory: true,
   });
@@ -177,7 +177,7 @@ if (autobio === 'TRUE'){
 
                          client.updateProfileStatus( 
 
-                                         ` \n\n${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} It's a ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi'})}.` 
+                                         `${date.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' })} It's a ${date.toLocaleString('en-US', { weekday: 'long', timeZone: 'Africa/Nairobi'})}.` 
 
                                  ) 
 
