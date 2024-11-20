@@ -299,7 +299,7 @@ if (badwordkick === 'TRUE' && isBotAdmin && !isAdmin && body && (new RegExp('\\b
  client.sendMessage(m.chat, {text:`Hey @${ki.split("@")[0]}👋 Next time learn to Follow group rules You out!\n\nsending group links is prohibited here!`, contextInfo:{mentionedJid:[kid]}}, {quoted:m}); 
        }   
 
-if (antilinkall === 'TRUE' && body.includes('http://') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
+if (antilinkall === 'TRUE' && body.includes('https://') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
   
  ki = m.sender; 
   
