@@ -296,10 +296,10 @@ if (badwordkick === 'TRUE' && isBotAdmin && !isAdmin && body && (new RegExp('\\b
                    participant: kid 
                 } 
              }).then(() => client.groupParticipantsUpdate(m.chat, [kid], 'remove')); 
- client.sendMessage(m.chat, {text:`Hey @${ki.split("@")[0]}👋 Next time learn to Follow group rules, You out!:\n\nsending group links is prohibited here!`, contextInfo:{mentionedJid:[kid]}}, {quoted:m}); 
+ client.sendMessage(m.chat, {text:`Hey @${ki.split("@")[0]}👋 Next time learn to Follow group rules You out!\n\nsending group links is prohibited here!`, contextInfo:{mentionedJid:[kid]}}, {quoted:m}); 
        }   
 
-if (antilinkall === 'TRUE' && body.includes('http') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
+if (antilinkall === 'TRUE' && body.includes('http://') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
   
  ki = m.sender; 
   
@@ -312,7 +312,7 @@ if (antilinkall === 'TRUE' && body.includes('http') && !Owner && isBotAdmin && !
                    participant: ki
                 } 
              }).then(() => client.groupParticipantsUpdate(m.chat, [ki], 'remove')); 
- client.sendMessage(m.chat, {text:`Hey @${ki.split("@")[0]}👋 I'm sorry but Next time follow group rules, You out!:\n\nsending links is prohibited in this group!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
+ client.sendMessage(m.chat, {text:`Hey @${ki.split("@")[0]}👋 I'm sorry but Next time follow group rules You out!\n\nsending links is prohibited in this group!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
        }   
   
   
