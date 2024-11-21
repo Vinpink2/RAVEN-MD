@@ -19,7 +19,7 @@
      "whatsapp-multi-device" 
    ], 
    "base": "https://github.com/DikaArdnt/Hisoka-Morou", 
-   "author": "Nick-Hunter", 
+   "author": "Nick Hunter", 
    "license": "MIT", 
    "dependencies": { 
         "@whiskeysockets/baileys": "^6.7.9",
@@ -47,7 +47,8 @@
          "fluent-ffmpeg": "^2.1.2", 
          "node-webpmux": "^3.1.5", 
          "path": "^0.12.7", 
-     "libsignal": "2.0.1", 
+     "libsignal": "2.0.1",
+      "luxon":"^3.4.4",
 
     "compile-run": "^2.3.4", 
       "node-fetch-commonjs": "^3.3.2",
